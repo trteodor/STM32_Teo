@@ -1,0 +1,10 @@
+20:27:32 **** Incremental Build of configuration Debug for project STM32gfxfristlook ****
+make -j8 all 
+arm-none-eabi-size   STM32gfxfristlook.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7056	     20	   1652	   8728	   2218	STM32gfxfristlook.elf
+Finished building: default.size.stdout
+ 
+
+20:27:32 Build Finished. 0 errors, 0 warnings. (took 482ms)
+

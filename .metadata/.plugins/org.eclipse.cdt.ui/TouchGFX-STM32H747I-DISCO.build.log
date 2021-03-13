@@ -1,0 +1,10 @@
+22:18:36 **** Incremental Build of configuration Debug for project TouchGFX-STM32H747I-DISCO ****
+make all 
+arm-none-eabi-size   TouchGFX-STM32H747I-DISCO_CM7.elf 
+   text	   data	    bss	    dec	    hex	filename
+31516334	   4344	 396424	31917102	1e7042e	TouchGFX-STM32H747I-DISCO_CM7.elf
+Finished building: default.size.stdout
+ 
+
+22:18:43 Build Finished. 0 errors, 0 warnings. (took 6s.870ms)
+

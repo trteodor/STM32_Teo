@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="yoffset=1"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="yoffset=2"/>
+			<item value="64"/>
+			<item value="SSD1306_send_com"/>
+			<item value="Ost_Wpr_Cz_Bajtu"/>
+			<item value="mmm3"/>
+			<item value="case  32"/>
+			<item value="32"/>
+			<item value="xadvance"/>
+			<item value="65"/>
+			<item value="Odczytaj_znak_16"/>
+			<item value="112"/>
+			<item value="Created_String_buf"/>
+			<item value="84"/>
+			<item value="Thuart2"/>
+			<item value="&amp;Thuart2"/>
+		</list>
+		<list key="replacehistory">
+			<item value="yoffset=1"/>
+			<item value="Zacznij_Wpr_Od"/>
+			<item value="Ost_Wpr_Cz_Bajtu"/>
+			<item value="OstWyzszy"/>
+			<item value="width"/>
+			<item value="Odczytaj_znak_S16_uc8"/>
+			<item value="Created_String_buf,White"/>
+			<item value="Thuart3"/>
+			<item value="USARTx"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1335"/>
+		<item key="DIALOG_Y_ORIGIN" value="190"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

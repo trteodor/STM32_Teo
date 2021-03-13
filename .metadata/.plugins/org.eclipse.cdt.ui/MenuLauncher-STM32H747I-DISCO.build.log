@@ -1,0 +1,10 @@
+20:25:31 **** Incremental Build of configuration Debug_CM7 for project MenuLauncher-STM32H747I-DISCO ****
+make -j8 all 
+arm-none-eabi-size   MenuLauncher-STM32H747I-DISCO_CM7.elf 
+   text	   data	    bss	    dec	    hex	filename
+10386144	 523388	7740084	18649616	11c9210	MenuLauncher-STM32H747I-DISCO_CM7.elf
+Finished building: default.size.stdout
+ 
+
+20:25:32 Build Finished. 0 errors, 0 warnings. (took 1s.392ms)
+
