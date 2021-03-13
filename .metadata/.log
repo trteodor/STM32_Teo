@@ -1809,3 +1809,25 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-03-13 14:17:14.738
 !MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+!SESSION 2021-03-13 15:50:55.689 -----------------------------------------------
+eclipse.buildId=Version 1.6.0
+java.version=11.0.9.1
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pl_PL
+Framework arguments:  E:\STM32_Teo\WYSWTLACZ_HUB75\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data E:\STM32_Teo E:\STM32_Teo\WYSWTLACZ_HUB75\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-03-13 15:51:05.283
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-03-13 15:51:05.380
+!MESSAGE Log4j initialized with config file E:\STM32_Teo\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-03-13 15:51:17.976
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 4 4 2021-03-13 15:51:18.705
+!MESSAGE com.st.stm32cube.ide.mcu.ide/META-INF/version/build_ref file not found, build reference will not be reported into properties
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-03-13 15:51:28.567
+!MESSAGE Indexed 'WYSWTLACZ_HUB75' (45 sources, 135 headers) in 10,2 sec: 17 462 declarations; 120 754 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,12%)
