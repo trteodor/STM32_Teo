@@ -88,9 +88,9 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-#define ReceiveTimeout 2
-#define RX_BUFFER_SIZE   40
-#define TX_BUFFER_SIZE   60
+#define ReceiveTimeout 10
+#define RX_BUFFER_SIZE   80
+#define TX_BUFFER_SIZE   100
 
 //uint8_t S_buf[20];
 

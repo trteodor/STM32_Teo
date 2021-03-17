@@ -1,0 +1,8 @@
+ENKODERY.c:25:6:HAL_GPIO_EXTI_Callback	16	static
+ENKODERY.c:70:6:oblicz_predkosc	16	static
+ENKODERY.c:104:6:mierzprzebdr	4	static
+ENKODERY.c:119:6:wykryj_znacznik	8	static
+ENKODERY.c:186:6:wykryto_znacznik	16	static
+ENKODERY.c:216:6:wyznacz_xiy	24	static
+ENKODERY.c:231:6:WYSLIJMAPE_DO_BLE	88	static
+ENKODERY.c:265:6:pomiardoble	16	static

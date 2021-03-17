@@ -1,0 +1,8 @@
+Komendy_BLE.c:48:6:KOMENDY_BLE	8	static
+Komendy_BLE.c:142:6:DANE_DO_APLIKACJI_MOBILNEJ	8	static
+Komendy_BLE.c:152:6:DRUKUJ_PID	64	static
+Komendy_BLE.c:213:6:PID_DO_BLE	40	static
+Komendy_BLE.c:256:6:DRUKUJCZUJNIKI	64	static
+Komendy_BLE.c:279:6:WyslijWartoscERR	40	static
+Komendy_BLE.c:426:6:PRZYPISYWANIEWARTOSCI	8	static
+Komendy_BLE.c:574:6:ZMIENNE_ZAAW_DO_BLE	40	static

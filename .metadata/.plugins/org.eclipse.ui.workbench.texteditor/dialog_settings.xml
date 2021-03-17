@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="yoffset=1"/>
+		<item key="selection" value="LL_UART_ECHO_DMA_IDLE"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="LL_UART_ECHO_DMA_IDLE"/>
+			<item value="LL_DMA_CHANNEL_6"/>
+			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
+			<item value="USART2"/>
+			<item value="USARTX-&gt;Instance"/>
+			<item value="LL_DMA_CHANNEL_7"/>
+			<item value="idl"/>
+			<item value="Sour"/>
+			<item value="Idle"/>
+			<item value="LL_DMA"/>
+			<item value="UARTDMA_IsDataReady"/>
 			<item value="yoffset=2"/>
 			<item value="64"/>
 			<item value="SSD1306_send_com"/>
 			<item value="Ost_Wpr_Cz_Bajtu"/>
-			<item value="mmm3"/>
-			<item value="case  32"/>
-			<item value="32"/>
-			<item value="xadvance"/>
-			<item value="65"/>
-			<item value="Odczytaj_znak_16"/>
-			<item value="112"/>
-			<item value="Created_String_buf"/>
-			<item value="84"/>
-			<item value="Thuart2"/>
-			<item value="&amp;Thuart2"/>
 		</list>
 		<list key="replacehistory">
+			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
+			<item value="USARTX-&gt;Instance"/>
+			<item value="USARTX-&gt;UART_DMA_TX_CHANNEL"/>
 			<item value="yoffset=1"/>
 			<item value="Zacznij_Wpr_Od"/>
 			<item value="Ost_Wpr_Cz_Bajtu"/>

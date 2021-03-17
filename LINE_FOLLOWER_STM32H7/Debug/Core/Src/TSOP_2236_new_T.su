@@ -1,0 +1,7 @@
+TSOP_2236_new_T.c:76:6:IR_INIT	8	static
+TSOP_2236_new_T.c:84:6:delay_100us	24	static
+TSOP_2236_new_T.c:93:6:IR_IT_Dec	4	static
+TSOP_2236_new_T.c:119:6:teo_dec	16	static
+TSOP_2236_new_T.c:134:6:IR_READER	8	static
+TSOP_2236_new_T.c:159:6:OBSLUGAPILOTA	4	static
+TSOP_2236_new_T.c:219:6:EEPROM_IR_STATE_READ	8	static

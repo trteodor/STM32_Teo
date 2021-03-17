@@ -1,0 +1,37 @@
+/*
+ * LL_UART_ECHO_DMA_IDLE.h
+ *
+ *  Created on: Mar 15, 2021
+ *      Author: Teodor
+ */
+
+#ifndef INC_LL_UART_ECHO_DMA_IDLE_H_
+#define INC_LL_UART_ECHO_DMA_IDLE_H_
+
+#include "main.h"
+
+
+#define DMA_RX_BUFFER_SIZE          64
+#define UART_BUFFER_SIZE            256
+
+
+typedef struct
+{
+
+
+	uint8_t DMA_RX_Buffer[DMA_RX_BUFFER_SIZE];	// DMA direct buffer
+	uint8_t UART_Buffer[UART_BUFFER_SIZE];		// UART working circular buffer
+
+	uint16_t UartBufferHead;
+	uint16_t UartBufferTail;
+	uint8_t  UartBufferLines;
+}UARTDMA_HandleTypeDef;
+
+
+extern void StartTransfers(void);
+extern void DMA1_TransmitComplete_Callback(void);
+extern void DMA1_ReceiveComplete_Callback(void);
+extern void USART_TransferError_Callback(void);
+
+
+#endif /* INC_LL_UART_ECHO_DMA_IDLE_H_ */

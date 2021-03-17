@@ -1,0 +1,14 @@
+15:12:25 **** Incremental Build of configuration Debug for project LINE_FOLLOWER_STM32H7 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/BLE_PC_CON.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32H743xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/STM32H7xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/BLE_PC_CON.d" -MT"Core/Src/BLE_PC_CON.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/BLE_PC_CON.o"
+arm-none-eabi-gcc -o "LINE_FOLLOWER_STM32H7.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\STM32_Teo\LINE_FOLLOWER_STM32H7\STM32H743VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LINE_FOLLOWER_STM32H7.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LINE_FOLLOWER_STM32H7.elf
+ 
+arm-none-eabi-size   LINE_FOLLOWER_STM32H7.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 105388	    508	 147572	 253468	  3de1c	LINE_FOLLOWER_STM32H7.elf
+Finished building: default.size.stdout
+ 
+
+15:12:28 Build Finished. 0 errors, 0 warnings. (took 2s.643ms)
+

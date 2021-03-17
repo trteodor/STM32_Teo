@@ -1,0 +1,10 @@
+R_PID.c:54:7:calculatePID	24	static
+R_PID.c:92:7:rz_predkoscfb	40	static
+R_PID.c:141:6:max_speed	4	static
+R_PID.c:168:6:JAZDA_DO_PRZODU	16	static
+R_PID.c:178:6:PRAWY_DO_TYLU	16	static
+R_PID.c:190:6:LEWY_DO_TYLU	16	static
+R_PID.c:202:6:JAZDA_DO_TYLU	16	static
+R_PID.c:211:6:EEPROM_ZAAW_READ	8	static
+R_PID.c:223:6:EEPROM_PID_READ	8	static
+R_PID.c:230:6:Motor_PWM_Init	8	static

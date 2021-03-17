@@ -17,6 +17,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Teodor\Desktop\stm32f4_uart_LL_test"/>
 			<item value="C:\Users\Teodor\STM32Cube\Repository\STM32Cube_FW_H7_V1.9.0\Projects\STM32H747I-DISCO\Demonstrations\TouchGFX\SW4STM32\TouchGFX-STM32H747I-DISCO"/>
 			<item value="C:\Users\Teodor\STM32Cube\Repository\STM32Cube_FW_H7_V1.9.0\Projects\STM32H747I-DISCO\Demonstrations\MenuLauncher\SW4STM32\MenuLauncher-STM32H747I-DISCO"/>
 		</list>

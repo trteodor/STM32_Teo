@@ -61,8 +61,8 @@ all: main-build
 main-build: LL_UART_ECHO.elf secondary-outputs
 
 # Tool invocations
-LL_UART_ECHO.elf: $(OBJS) $(USER_OBJS) E:\STM32_GH_TR_Repository\LL_UART_ECHO\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LL_UART_ECHO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32_GH_TR_Repository\LL_UART_ECHO\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LL_UART_ECHO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LL_UART_ECHO.elf: $(OBJS) $(USER_OBJS) E:\STM32_Teo\LL_UART_ECHO\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LL_UART_ECHO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\STM32_Teo\LL_UART_ECHO\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LL_UART_ECHO.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

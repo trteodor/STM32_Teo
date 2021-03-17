@@ -1,0 +1,20 @@
+17:54:33 **** Incremental Build of configuration Debug for project UART_DMA ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F411xE -DDEBUG -c -I../Inc -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/stm32f4xx_it.d" -MT"Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stm32f4xx_it.o"
+arm-none-eabi-gcc -o "UART_DMA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\Teodor\Desktop\UART_DMA_receiving-master\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="UART_DMA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: UART_DMA.elf
+ 
+arm-none-eabi-objdump -h -S  UART_DMA.elf  > "UART_DMA.list"
+arm-none-eabi-objcopy  -O binary  UART_DMA.elf  "UART_DMA.bin"
+arm-none-eabi-size   UART_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10144	     20	   2068	  12232	   2fc8	UART_DMA.elf
+Finished building: default.size.stdout
+ 
+Finished building: UART_DMA.bin
+ 
+Finished building: UART_DMA.list
+ 
+
+17:54:34 Build Finished. 0 errors, 0 warnings. (took 1s.515ms)
+

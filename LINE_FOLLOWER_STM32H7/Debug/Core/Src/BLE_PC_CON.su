@@ -1,0 +1,11 @@
+BLE_PC_CON.c:73:6:HAL_TIM_PeriodElapsedCallback	16	static
+BLE_PC_CON.c:94:6:BLE_INIT	8	static
+BLE_PC_CON.c:103:5:__io_putchar	16	static
+BLE_PC_CON.c:115:6:HAL_UART_RxCpltCallback	16	static
+BLE_PC_CON.c:132:6:BUFOR	8	static
+BLE_PC_CON.c:141:6:BUFOR2	8	static
+BLE_PC_CON.c:150:6:DOPAMIECI2	16	static
+BLE_PC_CON.c:187:6:DOPAMIECI	16	static
+BLE_PC_CON.c:224:6:DO_BLE	24	static
+BLE_PC_CON.c:235:6:DRUKOWANIE	40	static
+BLE_PC_CON.c:272:6:PC_BLE_TRANSMIT	4	static
