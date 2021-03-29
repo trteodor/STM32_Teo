@@ -45,7 +45,7 @@ void Init_LL_USART_IDLE()
 
 	  StartTransfers(&TUART2);
 
-	  TUART_DMA_Trasmit(&TUART2,(uint8_t*) "Wprowadz swoja wiadomosc do UARTU, program ten dziala jako echo \n\r" );
+	  TUART_DMA_Trasmit(&TUART2,(uint8_t*) "Wprowadz swoja wiadomosc do UARTU, program ten dziala jako echo  115200kb/s \n\r" );
 }
 
 void TUART_DMA_Trasmit(UART_DMA_Handle_Td *USARTX, uint8_t *txBuf)
