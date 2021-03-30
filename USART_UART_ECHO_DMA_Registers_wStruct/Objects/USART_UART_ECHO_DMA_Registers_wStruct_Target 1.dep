@@ -1,5 +1,5 @@
 Dependencies for Project 'USART_UART_ECHO_DMA_Registers_wStruct', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x60623637)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x60632C84)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (main.h)(0x6061DC44)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6061B28F)
@@ -9,11 +9,11 @@ I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cm
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F3392)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
-I (USART_UART_DMA.h)(0x606222A8)
+I (USART_UART_DMA.h)(0x60632C67)
 I (RCC_Config.h)(0x6061B652)
 I (GPIO_fun.h)(0x6061D2BF)
-F (.\USART_UART_DMA.c)(0x60623635)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\usart_uart_dma.o --omf_browse .\objects\usart_uart_dma.crf --depend .\objects\usart_uart_dma.d)
-I (USART_UART_DMA.h)(0x606222A8)
+F (.\USART_UART_DMA.c)(0x60632C68)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\usart_uart_dma.o --omf_browse .\objects\usart_uart_dma.crf --depend .\objects\usart_uart_dma.d)
+I (USART_UART_DMA.h)(0x60632C67)
 I (main.h)(0x6061DC44)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
 I (.\RTE\_Target_1\RTE_Components.h)(0x6061B28F)
@@ -36,9 +36,9 @@ I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cm
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F3392)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
-I (USART_UART_DMA.h)(0x606222A8)
+I (USART_UART_DMA.h)(0x60632C67)
 I (GPIO_fun.h)(0x6061D2BF)
-F (.\GPIO_fun.c)(0x6061E790)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\gpio_fun.o --omf_browse .\objects\gpio_fun.crf --depend .\objects\gpio_fun.d)
+F (.\GPIO_fun.c)(0x60623FFC)(--c99 --gnu -c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections-I.\RTE\Device\STM32F103RB-I.\RTE\_Target_1-IC:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="525" -D_RTE_ -DSTM32F10X_MD-o .\objects\gpio_fun.o --omf_browse .\objects\gpio_fun.crf --depend .\objects\gpio_fun.d)
 I (GPIO_fun.h)(0x6061D2BF)
 I (main.h)(0x6061DC44)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58259ADC)
@@ -49,10 +49,10 @@ I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cm
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E836932)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F3392)
 I (C:\Users\Teodor\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58259ADC)
-I (USART_UART_DMA.h)(0x606222A8)
+I (USART_UART_DMA.h)(0x60632C67)
 I (RCC_Config.h)(0x6061B652)
 F (.\main.h)(0x6061DC44)()
-F (.\USART_UART_DMA.h)(0x606222A8)()
+F (.\USART_UART_DMA.h)(0x60632C67)()
 F (.\RCC_Config.h)(0x6061B652)()
 F (.\GPIO_fun.h)(0x6061D2BF)()
 F (RTE\Device\STM32F103RB\RTE_Device.h)(0x59284216)()

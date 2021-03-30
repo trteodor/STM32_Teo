@@ -8,7 +8,7 @@ void tooglePIN(GPIO_TypeDef *GPIOx, Gpio_Ch_st GPIO_Pin)
 }
 void GPIO_Pin_Cfg(GPIO_TypeDef * const port, GpioPin_t pin, GpioMode_t mode)
 {
-	//napisanie nic nie zepsuje alternatywa bitowa to alternatywa - no kosztem wydajnosci no ale
+	//nadpisanie nic nie zepsuje alternatywa bitowa to alternatywa - no kosztem wydajnosci no ale
 	if(port==GPIOA)
 	{
 		RCC->APB2ENR |=  RCC_APB2ENR_IOPAEN;
@@ -33,7 +33,7 @@ void GPIO_Pin_Cfg(GPIO_TypeDef * const port, GpioPin_t pin, GpioMode_t mode)
 	}
 	else
 	{
-		uint8_t pinH = pin - 8;
+		uint8_t pinH = pin - 8;  //to avoid warnings
 		port->CRH &= ~((uint32_t)(0xf << (pinH*4) ));
 		port->CRH |= mode << (pinH*4);
 	}
