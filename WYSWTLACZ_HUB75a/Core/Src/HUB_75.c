@@ -12,24 +12,22 @@
 #include "quadspi.h"
 #include "PIXEL_MAPS.h"
 
+//@here define the brightness
+#define scr_brightness 50
+//min 1 max 100;
 
 void Send_BUF_IN_SCR(uint8_t *SendBuffer);
-
 void Select_Send_Buf(uint8_t *BITMAP);
-
 void PrepareRowPart(uint8_t *BMP,uint8_t *OUT_B);
 void wybierz_linie(uint8_t *MAP_NAME);
 uint8_t* HOR_SCROLL_PROCES(uint8_t *BIT_MAP, uint32_t Time_Pr, uint16_t Hor_Pixel_Count);
 int pointer=0;
-
 //Bufory
 uint8_t Conv_BP[10000]={0};
 uint8_t OUT_B1[2550]={0};
 uint8_t OUT_B2[2550]={0};
-
 //uint8_t OUT_B2[550];
 //Globalne zmienne pomocniczne
-
 uint32_t k=0,l=0;
 int LINIA=0;
 uint32_t zT_SCROLL=0;
@@ -126,7 +124,6 @@ void Send_BUF_IN_SCR(uint8_t *SendBuffer)
 						break;
 					}
 }
-
 void PrepareFullBuffer(uint8_t *BMP,uint8_t *OUT_B)
 {
 for(int i=0; i<2500; i++)
@@ -331,13 +328,10 @@ for(int i=0; i<4; i++)
 }
  HAL_GPIO_TogglePin(LATCH_GPIO_Port, LATCH_Pin);
 
- __HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,97);
+ __HAL_TIM_SET_COMPARE(&htim4,TIM_CHANNEL_1,100-scr_brightness);
 }
 void HUB_75_INIT()
 {
-
-
-
 	LL_TIM_EnableIT_CC1(TIM5);
 	LL_TIM_EnableCounter(TIM5);
 
@@ -362,8 +356,6 @@ void HUB_75_INIT()
 }
 void Select_Send_Buf(uint8_t *BITMAP)
 {
-
-
 	   if(Bufor_Send_Picker==BUFOR1)
 	   {
 		   PrepareFullBuffer(BITMAP,OUT_B1);
@@ -379,9 +371,6 @@ void Select_Send_Buf(uint8_t *BITMAP)
 		   return;
 	   }
 }
-
-
-
 uint8_t* Verical_Scroll_Flow_withHOLD(uint8_t *BIT_MAP, uint8_t Row_Count, uint32_t Czas_P, uint32_t Time_hold_Start,uint32_t Time_hold_Stop, uint8_t HALF)//przesuwanie w pionie z zatrzymywaniem
 {
 	SCR_PROCESS=SCR_VIEWING_PROCESS_BUSY;
@@ -420,14 +409,13 @@ uint8_t* Verical_Scroll_Flow_withHOLD(uint8_t *BIT_MAP, uint8_t Row_Count, uint3
 		 }
 	}
 
-	if(zT_View+Time_hold_Stop <HAL_GetTick() && f_start_view==4 )
+if(zT_View+Time_hold_Stop <HAL_GetTick() && f_start_view==4 )
 			{
 		zT_View =HAL_GetTick();
 		f_start_view=1;
 		Select_Send_Buf(Conv_BP);
 		SCR_PROCESS=SCR_VIEWING_PROCESS_DONE;
 			}
-
 return Conv_BP;
 }
 uint8_t* Vertical_Scroll_Flow(uint8_t *BIT_MAP, uint8_t Row_Count, uint32_t Czas_P, uint8_t HALF) //plynne przesuwanie w pionie
@@ -530,6 +518,9 @@ if(zT_View+Time_hold <HAL_GetTick() && f_start_view==4 )
 		}
  return Conv_BP;
 }
+
+uint8_t Wpr_Od_Wyzszej_cz_Bajtu=1;
+
 uint8_t* HOR_SCROLL_PROCES(uint8_t *BIT_MAP, uint32_t Time_Pr, uint16_t Hor_Pixel_Count)
 {
 	SCR_PROCESS=SCR_VIEWING_PROCESS_BUSY;
@@ -538,20 +529,43 @@ uint8_t* HOR_SCROLL_PROCES(uint8_t *BIT_MAP, uint32_t Time_Pr, uint16_t Hor_Pixe
 	 {
 		   for(int i=0; i<32; i++)
 		  	{
+
 		  		  for(int j=0; j<65; j++)
 		  		  {
-		  			 Conv_BP[j+(i*64)]= BIT_MAP[ k+ j+(i* (Hor_Pixel_Count/2)) ];
+		  			  if(Wpr_Od_Wyzszej_cz_Bajtu)
+		  			  {
+		  				Conv_BP[j+(i*64)] =0;
+		  				Conv_BP[j+(i*64) ]        |= (BIT_MAP[ k+ j+(i* (Hor_Pixel_Count/2))    ] & 0x0F) << 4 ;
+		  				Conv_BP[j+(i*64) ]        |= (BIT_MAP[ k+ j+(i* (Hor_Pixel_Count/2)) +1 ] & 0xF0) >> 4 ;
+		  			  }
+		  			  else
+		  			  {
+		  				Conv_BP[j+(i*64)]= BIT_MAP[ k+ j+(i* (Hor_Pixel_Count/2)) ];
+		  			  }
 		  		  }
 		  	}
-		   k++;
-		   if( k== ( (Hor_Pixel_Count-128) /2 )+1   )  //Przesuwa sie o 2 bo takie mam bity mapy trzeba bylo by lower higher itd itp... ;)
+			 if(Wpr_Od_Wyzszej_cz_Bajtu)
+			 {
+				Wpr_Od_Wyzszej_cz_Bajtu=0;
+				  k++;
+			 }
+			 else
+			 {
+				 Wpr_Od_Wyzszej_cz_Bajtu=1;
+			 }
+
+		   if( k== ( (Hor_Pixel_Count-128) /2 )+1   )
 		   {
 			   k=0; l=0;
 			   SCR_PROCESS=SCR_VIEWING_PROCESS_DONE;
 		   }
 		   zT_SCROLL=HAL_GetTick();
 		   Select_Send_Buf(Conv_BP);
+
+
+
 	}
+
 	 return Conv_BP;
 }
 

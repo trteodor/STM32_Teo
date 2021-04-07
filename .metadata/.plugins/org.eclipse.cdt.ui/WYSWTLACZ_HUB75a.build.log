@@ -1,5 +1,6 @@
-12:03:09 **** Incremental Build of configuration Debug for project WYSWTLACZ_HUB75a ****
+21:10:50 **** Incremental Build of configuration Debug for project WYSWTLACZ_HUB75a ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/HUB_75.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DSTM32H750xx -DUSE_HAL_DRIVER -DUSE_FULL_LL_DRIVER -DDEBUG -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/STM32H7xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/HUB_75.d" -MT"Core/Src/HUB_75.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/HUB_75.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DSTM32H750xx -DUSE_HAL_DRIVER -DUSE_FULL_LL_DRIVER -DDEBUG -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../Drivers/STM32H7xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "WYSWTLACZ_HUB75a.elf" @"objects.list"   -mcpu=cortex-m7 -T"E:\STM32_Teo\WYSWTLACZ_HUB75a\STM32H750VBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="WYSWTLACZ_HUB75a.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: WYSWTLACZ_HUB75a.elf
@@ -8,7 +9,7 @@ arm-none-eabi-objdump -h -S  WYSWTLACZ_HUB75a.elf  > "WYSWTLACZ_HUB75a.list"
 arm-none-eabi-objcopy  -O binary  WYSWTLACZ_HUB75a.elf  "WYSWTLACZ_HUB75a.bin"
 arm-none-eabi-size   WYSWTLACZ_HUB75a.elf 
    text	   data	    bss	    dec	    hex	filename
-  59928	  37312	  48272	 145512	  23868	WYSWTLACZ_HUB75a.elf
+  59832	  37316	  48268	 145416	  23808	WYSWTLACZ_HUB75a.elf
 Finished building: default.size.stdout
  
 Finished building: WYSWTLACZ_HUB75a.bin
@@ -16,5 +17,5 @@ Finished building: WYSWTLACZ_HUB75a.bin
 Finished building: WYSWTLACZ_HUB75a.list
  
 
-12:03:12 Build Finished. 0 errors, 0 warnings. (took 3s.97ms)
+21:10:54 Build Finished. 0 errors, 0 warnings. (took 3s.217ms)
 

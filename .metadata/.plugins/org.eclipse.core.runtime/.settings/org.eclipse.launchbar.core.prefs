@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LL_UART_ECHO Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75a Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LL_UART_ECHO_DMA_IDLE Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LL_UART_ECHO Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LL_UART_ECHO_DMA_IDLE Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75a Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project\ Debug/activeLaunchTarget=null\:---

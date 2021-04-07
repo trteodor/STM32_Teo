@@ -81,9 +81,6 @@ int main(void)
 
   /* USER CODE END 1 */
 
-  /* Enable I-Cache---------------------------------------------------------*/
-  SCB_EnableICache();
-
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -113,11 +110,11 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM4_Init();
   MX_SPI2_Init();
-  MX_IWDG1_Init();
+ // MX_IWDG1_Init();
   /* USER CODE BEGIN 2 */
 
   //HAL_Delay(2);  //WatchDOG!!!!! na 20 MS
-
+  HAL_IWDG_Refresh(&hiwdg1);
 HUB_75_INIT();
 
 INIT_UART3();
@@ -133,6 +130,8 @@ uint8_t B2[]= "POZDRAWIAMY";
 Size=sizeof(B2)-1;
 Create_String_buffer (B2, Size, 1 , Pozdr_widzow,Green);
 
+HAL_IWDG_Refresh(&hiwdg1);
+
 uint8_t ZaprDoSalonuFryzStudio[10000]={0};
 uint8_t S1[]= " ZAPRASZAMY";
 uint8_t S2[]= "  DO SALONU ";
@@ -144,6 +143,9 @@ Create_String_buffer (S1, Size, 0 , ZaprDoSalonuFryzStudio,Azure);
  Size=sizeof(S2)-1;
 Create_String_buffer (S2, Size, 1 , ZaprDoSalonuFryzStudio,Green);
  Size=sizeof(S3)-1;
+
+ HAL_IWDG_Refresh(&hiwdg1);
+
 Create_String_buffer (S3, Size, 2 , ZaprDoSalonuFryzStudio,Yellow);
  Size=sizeof(S4)-1;
 Create_String_buffer (S4, Size, 3 , ZaprDoSalonuFryzStudio,Purple);
@@ -220,7 +222,7 @@ SedingBufor_Adr=OUT_B1;
 	  	break;
 
 	  case 4:
-		  	 Horizontal_SCROLL( Pozdr_wsz, 1300 , 500, 20);  //Pozdr_wsz
+		  	 Horizontal_SCROLL( Pozdr_wsz, 1300 , 1300, 18);  //Pozdr_wsz
 		  	 if(SCR_PROCESS==SCR_VIEWING_PROCESS_DONE)
 		  	 {
 		  		 Proces_num++;
