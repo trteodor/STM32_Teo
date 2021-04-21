@@ -13,7 +13,7 @@
 #include "PIXEL_MAPS.h"
 
 //@here define the brightness
-#define scr_brightness 50
+#define scr_brightness 25
 //min 1 max 100;
 
 void Send_BUF_IN_SCR(uint8_t *SendBuffer);

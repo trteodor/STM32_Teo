@@ -110,7 +110,7 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM4_Init();
   MX_SPI2_Init();
- // MX_IWDG1_Init();
+  MX_IWDG1_Init();
   /* USER CODE BEGIN 2 */
 
   //HAL_Delay(2);  //WatchDOG!!!!! na 20 MS
@@ -222,7 +222,7 @@ SedingBufor_Adr=OUT_B1;
 	  	break;
 
 	  case 4:
-		  	 Horizontal_SCROLL( Pozdr_wsz, 1300 , 1300, 18);  //Pozdr_wsz
+		  	 Horizontal_SCROLL( Pozdr_wsz, 1300 , 1300, 23);  //Pozdr_wsz
 		  	 if(SCR_PROCESS==SCR_VIEWING_PROCESS_DONE)
 		  	 {
 		  		 Proces_num++;

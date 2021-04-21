@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="helix"/>
+		<item key="selection" value="GFX_DrawPixel"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="helix"/>
-			<item value="LL_UART_ECHO_DMA_IDLE"/>
-			<item value="LL_DMA_CHANNEL_6"/>
-			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
-			<item value="USART2"/>
-			<item value="USARTX-&gt;Instance"/>
-			<item value="LL_DMA_CHANNEL_7"/>
-			<item value="idl"/>
-			<item value="Sour"/>
-			<item value="Idle"/>
-			<item value="LL_DMA"/>
-			<item value="UARTDMA_IsDataReady"/>
-			<item value="yoffset=2"/>
-			<item value="64"/>
-			<item value="SSD1306_send_com"/>
+			<item value="GFX_DrawPixel"/>
+			<item value="__HAL_I2C_GET_FLAG"/>
+			<item value="DMA"/>
+			<item value="hi2c"/>
+			<item value="SDRAM_HandleTypeDef"/>
+			<item value="DataToReceive"/>
+			<item value="osMessageQueuePut"/>
+			<item value="ETH_HandleRxPkt"/>
+			<item value="ETH_Init"/>
 		</list>
 		<list key="replacehistory">
 			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
@@ -33,10 +27,6 @@
 			<item value="Ost_Wpr_Cz_Bajtu"/>
 			<item value="OstWyzszy"/>
 			<item value="width"/>
-			<item value="Odczytaj_znak_S16_uc8"/>
-			<item value="Created_String_buf,White"/>
-			<item value="Thuart3"/>
-			<item value="USARTx"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

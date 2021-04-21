@@ -56,7 +56,9 @@ void USART2_IRQHandler(void){
 int main(void) 
 {
 	USART2Config();
+	
  while(1)
- { __WFI; //sleep CPU;
+ {
+	 __WFI; //sleep CPU;
  }
 }
