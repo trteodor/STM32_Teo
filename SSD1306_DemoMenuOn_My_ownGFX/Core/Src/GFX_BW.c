@@ -654,10 +654,10 @@ int GFX_Copy(GFX_td *outBUF, int inrows, int incol, GFX_td *inBUF)
   return 0;
 }
 
-int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift)
+int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift,int scrollprocessHor)
 {
 	  int c,r;//counters for rows and columns
-	  static int processtate=0;
+	 int processtate=scrollprocessHor;
 
   	  ImageOut->WindowHeigh=incol;
   	  ImageOut->WindowWidth=inrows;
@@ -691,9 +691,7 @@ int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int 
 int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift,int shiftval, int HALF)
 {
 	  int c,r;//counters for rows and columns
-	  static int processtate=0;
-	  static int flowprocess=0;
-
+	  int processtate=shiftval;
 	  	  ImageOut->WindowHeigh=incol;
 	  	  ImageOut->WindowWidth=inrows;
 
@@ -712,17 +710,7 @@ int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int in
 		        	int color=	GFX_ReadPixel(ImageIn,r,c);
 		        	GFX_DrawPixel(ImageOut,r,numRowShift-processtate+c, color);
 		                 }}
-		  	  //inrows-r-1, incol-c-2
-		  processtate++;
-
-	  	  if(processtate>=numRowShift-1)
-	  	  {
-	  		  int helper=processtate;
-	  		processtate=0;
-	  		flowprocess=0;
-	  		return helper;
-	  	  }
-	  	  return processtate;
+return 0;
 }
 
 

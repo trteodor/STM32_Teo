@@ -103,7 +103,7 @@ GFX_td* GFX_CreateWindow(int sizeWidth, int sizeHigh);
 GFX_td* GFX_CreateScreen();
 void GFX_ClearBuffer(GFX_td *GFXstr,int16_t x, int16_t y);
 
-int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift);
+int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift,int scrollprocessHor);
 int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift,int shiftval, int HALF);
 int GFX_WindowMirror(GFX_td *Image, int inrows, int incol,uint8_t color, int axis);
 int GFX_WindowRotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle);

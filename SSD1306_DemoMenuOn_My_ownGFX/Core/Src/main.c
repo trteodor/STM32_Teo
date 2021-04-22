@@ -94,7 +94,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+uint32_t LedTime=0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,6 +102,13 @@ int main(void)
   while (1)
   {
 	  OLED_SSD1306Task();
+	//  if((LedTime+200) < HAL_GetTick() )
+	//  {
+	//	  LedTime=HAL_GetTick();
+		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	//  }
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -43456,3 +43456,432 @@ Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
  
 Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
  
+12:22:00 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+../Core/Src/OLED_SSD1306_Task.c: In function 'OLED_SSD1306Task':
+../Core/Src/OLED_SSD1306_Task.c:87:12: error: 'scrollprocessVe' undeclared (first use in this function); did you mean 'scrollprocessVer'?
+   87 |         if(scrollprocessVe>15)
+      |            ^~~~~~~~~~~~~~~
+      |            scrollprocessVer
+../Core/Src/OLED_SSD1306_Task.c:87:12: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:65: Core/Src/OLED_SSD1306_Task.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:22:07 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25516	    128	   1952	  27596	   6bcc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:22:58 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25516	    128	   1952	  27596	   6bcc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:23:20 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25516	    128	   1952	  27596	   6bcc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:24:42 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+../Core/Src/GFX_BW.c: In function 'GFX_Window_VerScrollFlow':
+../Core/Src/GFX_BW.c:698:15: warning: variable 'flowprocess' set but not used [-Wunused-but-set-variable]
+  698 |    static int flowprocess=0;
+      |               ^~~~~~~~~~~
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25504	    128	   1952	  27584	   6bc0	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:25:08 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+../Core/Src/GFX_BW.c: In function 'GFX_Window_VerScrollFlow':
+../Core/Src/GFX_BW.c:698:15: warning: variable 'flowprocess' set but not used [-Wunused-but-set-variable]
+  698 |    static int flowprocess=0;
+      |               ^~~~~~~~~~~
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25500	    128	   1952	  27580	   6bbc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:25:54 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+../Core/Src/GFX_BW.c: In function 'GFX_Window_VerScrollFlow':
+../Core/Src/GFX_BW.c:720:1: warning: control reaches end of non-void function [-Wreturn-type]
+  720 | }
+      | ^
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25468	    128	   1944	  27540	   6b94	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:26:22 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+../Core/Src/GFX_BW.c: In function 'GFX_Window_VerScrollFlow':
+../Core/Src/GFX_BW.c:714:1: warning: control reaches end of non-void function [-Wreturn-type]
+  714 | }
+      | ^
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25460	    128	   1944	  27532	   6b8c	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:26:33 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25460	    128	   1944	  27532	   6b8c	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:28:33 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+../Core/Src/OLED_SSD1306_Task.c: In function 'OLED_SSD1306Task':
+../Core/Src/OLED_SSD1306_Task.c:45:14: warning: unused variable 'scrollprocessHor' [-Wunused-variable]
+   45 |   static int scrollprocessHor=0;
+      |              ^~~~~~~~~~~~~~~~
+At top level:
+../Core/Src/OLED_SSD1306_Task.c:45:14: warning: 'scrollprocessHor' defined but not used [-Wunused-variable]
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25492	    128	   1944	  27564	   6bac	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:29:14 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25496	    128	   1952	  27576	   6bb8	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:29:22 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25496	    128	   1952	  27576	   6bb8	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+12:31:11 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306.d" -MT"Core/Src/OLED_SSD1306.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306.o"
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25500	    128	   1952	  27580	   6bbc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:31:44 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/GFX_BW.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/GFX_BW.d" -MT"Core/Src/GFX_BW.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/GFX_BW.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25480	    128	   1944	  27552	   6ba0	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:31:49 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25480	    128	   1944	  27552	   6ba0	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+12:32:11 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25480	    128	   1944	  27552	   6ba0	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:40:24 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25540	    128	   1944	  27612	   6bdc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:40:44 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25548	    128	   1944	  27620	   6be4	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:41:29 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:97:10: warning: unused variable 'LedTime' [-Wunused-variable]
+   97 | uint32_t LedTime=0;
+      |          ^~~~~~~
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25524	    128	   1944	  27596	   6bcc	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:42:25 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25448	    128	   1944	  27520	   6b80	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:44:30 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25448	    128	   1944	  27520	   6b80	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:45:09 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25448	    128	   1944	  27520	   6b80	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:46:40 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25448	    128	   1944	  27520	   6b80	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:47:27 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25404	    128	   1944	  27476	   6b54	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+12:48:01 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  25448	    128	   1944	  27520	   6b80	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
