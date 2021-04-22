@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="GFX_DrawPixel"/>
+		<item key="selection" value="Callback"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="CallBack"/>
+			<item value="Call"/>
+			<item value="SSD1306_ReadPixelColor"/>
+			<item value="Read"/>
+			<item value="_swap_int"/>
+			<item value="memcpy"/>
+			<item value="inBUF"/>
+			<item value="angle"/>
+			<item value="char"/>
+			<item value="buff"/>
 			<item value="GFX_DrawPixel"/>
+			<item value="SSD1306_DrawPixel"/>
+			<item value="GFX_ImageRotat"/>
 			<item value="__HAL_I2C_GET_FLAG"/>
 			<item value="DMA"/>
-			<item value="hi2c"/>
-			<item value="SDRAM_HandleTypeDef"/>
-			<item value="DataToReceive"/>
-			<item value="osMessageQueuePut"/>
-			<item value="ETH_HandleRxPkt"/>
-			<item value="ETH_Init"/>
 		</list>
 		<list key="replacehistory">
+			<item value="GFX_ReadPixel"/>
+			<item value="GFX_ReadPixel(GFX_td *GFXstr,int16_t x, int16_t y)"/>
+			<item value="Image"/>
 			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
 			<item value="USARTX-&gt;Instance"/>
 			<item value="USARTX-&gt;UART_DMA_TX_CHANNEL"/>

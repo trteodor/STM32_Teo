@@ -259,17 +259,9 @@ void SSD1306_I2cInit(I2C_HandleTypeDef *i2c)
 //
 // Clear the buffer
 //
-void SSD1306_Clear(GFX_td *GFXstr,uint8_t Color)
+void SSD1306_Clear(GFX_td *GFXstr,int16_t rows,int16_t cols)
 {
-	switch (Color)
-	{
-		case WHITE:
-			memset(GFXstr->OutBuffer, 0xFF, (SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8));
-			break;
-		case BLACK:
-			memset(GFXstr->OutBuffer, 0x00, (SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8));
-			break;
-	}
+	memset(GFXstr->OutBuffer, 0x00, (cols * rows / 8));
 }
 
 //

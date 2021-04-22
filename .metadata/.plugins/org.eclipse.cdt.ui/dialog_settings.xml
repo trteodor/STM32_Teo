@@ -10,6 +10,8 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="CallBack"/>
+			<item value="callback"/>
 			<item value="Data"/>
 			<item value="RecivedData"/>
 		</list>

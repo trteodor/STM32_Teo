@@ -1,12 +1,4 @@
-/*
- * GFX_BW.h
- *
- *  The MIT License.
- *  Created on: 25.05.2017
- *      Author: Mateusz Salamon
- *      www.msalamon.pl
- *      mateusz@msalamon.pl
- */
+
 
 #include "main.h"
 #include "stm32f1xx_hal.h"
@@ -14,29 +6,55 @@
 #include "GFX_BW.h"
 #include <string.h>
 
-#if USING_LINES == 1
 #include <stdlib.h> // for abs() function
-#endif
-#if USING_IMAGE_ROTATE == 1
-#include <math.h>
-#endif
 
 #define _swap_int(a, b) { int t = a; a = b; b = t; }
 
-#if  USING_STRINGS == 1
+
 const uint8_t* font;
 uint8_t size = 1;
 
-//here put your DrawPixel prototype with extern (probably you need change it!)
-static uint8_t PutWindowsHelper_ReadPixelColor(GFX_td *InBuf,uint16_t x, uint16_t y);
-
 //here put your extern function prototype
 extern void SSD1306_DrawPixel(GFX_td *GFXstr,int16_t x, int16_t y, uint8_t Color);
-extern uint8_t SSD1306_ReadPixelColor(GFX_td *InBuf,uint16_t x,uint16_t y);
+extern uint8_t SSD1306_ReadPixelColor(GFX_td *GFXstr,int16_t x, int16_t y);
+extern void SSD1306_Clear(GFX_td *GFXstr,int16_t x, int16_t y);
 
-void GFX_DrawPixel(GFX_td *GFXstr,int16_t x, int16_t y, uint8_t Color)
+__attribute__((weak)) void GFX_DrawPixel(GFX_td *GFXstr,int16_t x, int16_t y, uint8_t Color)
 {
 	SSD1306_DrawPixel(GFXstr,x,y,Color);   //here call
+}
+
+__attribute__((weak)) int GFX_ReadPixel(GFX_td *GFXstr,int16_t x, int16_t y)
+{
+	return SSD1306_ReadPixelColor(GFXstr,x,y);
+}
+__attribute__((weak)) void GFX_ClearBuffer(GFX_td *GFXstr,int16_t x, int16_t y)
+{
+	 SSD1306_Clear(GFXstr,x,y);
+}
+
+GFX_td* GFX_CreateWindow(int sizeWidth, int sizeHigh)
+{
+	GFX_td *WindowPointer= malloc(sizeof(GFX_td) );
+
+	WindowPointer->WindowHeigh=sizeHigh;
+	WindowPointer->WindowWidth=sizeWidth;
+	WindowPointer->OutBuffer=calloc(sizeHigh* (sizeWidth/DividerToPixel),1 );
+
+	return WindowPointer;
+}
+
+
+
+GFX_td* GFX_CreateScreen()
+{
+	GFX_td *ScrenPointer= malloc(sizeof(GFX_td) );
+
+	ScrenPointer->WindowHeigh=LCDHEIGHT;
+	ScrenPointer->WindowWidth=LCDWIDTH;
+	ScrenPointer->OutBuffer=calloc(LCDHEIGHT* (LCDWIDTH/DividerToPixel),1 );
+
+	return ScrenPointer;
 }
 
 void GFX_PutWindow(GFX_td *InBuf,GFX_td *ScrOutBuf,int place_x_put, int place_y_put)
@@ -47,19 +65,12 @@ uint8_t color;
 			{
 				for(uint32_t i=0; i<InBuf->WindowHeigh; i++)
 				{
-					color=PutWindowsHelper_ReadPixelColor(InBuf,j,i);
+					color=GFX_ReadPixel(InBuf,j,i);
 					GFX_DrawPixel(ScrOutBuf,place_x_put+j, place_y_put+i, color);
 				}
 			}
 
 }
-
-//call here your pixel read color function
-static uint8_t PutWindowsHelper_ReadPixelColor(GFX_td *InBuf,uint16_t x,uint16_t y)
-{
-return SSD1306_ReadPixelColor(InBuf,x,y);
-}
-
 
 void GFX_DrawChar(GFX_td *GFXstr,int x, int y, char chr, uint8_t color, uint8_t background)
 {
@@ -108,8 +119,8 @@ void GFX_DrawString(GFX_td *GFXstr,int x, int y, char* str, uint8_t color, uint8
 		znak = *str;
 	}
 }
-#endif
-#if USING_LINES == 1
+
+
 void GFX_WriteLine(GFX_td *GFXstr,int x_start, int y_start, int x_end, int y_end, uint8_t color)
 {
 	int16_t steep = abs(y_end - y_start) > abs(x_end - x_start);
@@ -174,7 +185,7 @@ void GFX_DrawLine(GFX_td *GFXstr,int x_start, int y_start, int x_end, int y_end,
 	    	GFX_WriteLine(GFXstr,x_start, y_start, x_end, y_end, color);
 	    }
 }
-#endif
+
 #if USING_RECTANGLE == 1
 void GFX_DrawRectangle(GFX_td *GFXstr,int x, int y, uint16_t w, uint16_t h, uint8_t color)
 {
@@ -525,11 +536,11 @@ double sinus(uint16_t angle)
 	return 0; // will be never here
 }
 
-int GFX_rotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle)
+int GFX_WindowRotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle)
 {
 
   int c,r;//counters for rows and columns
-  uint32_t sizeBuf=Image->WindowHeigh * (Image->WindowWidth/8);
+  uint32_t sizeBuf=Image->WindowHeigh * (Image->WindowWidth/DividerToPixel);
 
   uint8_t *HelperBuf;
   HelperBuf=(uint8_t*) calloc(sizeBuf,1);
@@ -538,11 +549,9 @@ int GFX_rotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle)
   	  HelperStruct  = (GFX_td*) malloc(  sizeof(GFX_td) );
 
    HelperStruct->OutBuffer=HelperBuf;
-   HelperStruct->WindowHeigh=Image->WindowHeigh;
-   HelperStruct->WindowWidth=Image->WindowWidth;
+   HelperStruct->WindowHeigh=inrows;
+   HelperStruct->WindowWidth=incol;
 
-   memset(HelperBuf,0x00,sizeBuf);
-   memcpy(HelperBuf,Image->OutBuffer,sizeBuf);
 
 
   	  //rotate 90 degree anticlockwise
@@ -550,29 +559,29 @@ int GFX_rotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle)
   { for(r = 0; r < inrows; r++)
         { for(c = 0; c < incol; c++ )
                 {
-                int color=	SSD1306_ReadPixelColor(Image,inrows-r-1, c);
-                	GFX_DrawPixel(HelperStruct,c, r, color);
+            int color=	GFX_ReadPixel(Image,inrows-r-1, c);
+            	GFX_DrawPixel(HelperStruct,c, r, color);
                  }}
 
-  	  Image->WindowWidth=incol+1;
+  	  Image->WindowWidth=incol;
   	  Image->WindowHeigh=inrows;
   }
 if(angle == 90 || angle == -270)//rotating 90 or -270
 	{  for(r = 0; r < inrows; r++)
     	{  for(c = 0; c < incol; c++ )
             {
-            int color=	SSD1306_ReadPixelColor(Image,inrows-r-1, c);
-            	GFX_DrawPixel(HelperStruct,incol-c, inrows-r, color);
+            int color=	GFX_ReadPixel(Image,inrows-r-1, c);
+            	GFX_DrawPixel(HelperStruct,incol-c-1, inrows-r, color);
             }
     	}
-	//Image->WindowWidth=incol+1;
-	//Image->WindowHeigh=inrows;
+	  Image->WindowWidth=incol;
+	  Image->WindowHeigh=inrows;
 	}
 if(angle == 180 || angle == -180)//rotating 180 or -180
 {    for(r = 0; r < inrows; r++)
     	{ for(c = 0; c < incol; c++ )
             {
-            int color=	SSD1306_ReadPixelColor(Image,r, c);
+            int color=	GFX_ReadPixel(Image,r, c);
             	GFX_DrawPixel(HelperStruct,inrows-r-1, incol-c-2, color);
             }
     }
@@ -587,20 +596,47 @@ free(HelperBuf);
   return 0;
 }
 
-int GFX_WindowMirror(GFX_td *outBUF, int inrows, int incol, GFX_td *inBUF,uint8_t color, int angle)
+int GFX_WindowMirror(GFX_td *Image, int inrows, int incol,uint8_t color, int axis)
 {
-	 int c,r;//counters for rows and columns
+  int c,r;//counters for rows and columns
+  uint32_t sizeBuf=Image->WindowHeigh * (Image->WindowWidth/DividerToPixel);
 
-	if(angle == 91 || angle == -271)//rotating 90 or -270
-		{  for(r = 0; r < inrows; r++)
-	    	{  for(c = 0; c < incol; c++ )
-	            {
-	            int color=	SSD1306_ReadPixelColor(inBUF,inrows-r, c);
-	            	GFX_DrawPixel(outBUF,r, c, color);
-	            }
-	    	}
-		}
-	return 0;
+  uint8_t *HelperBuf;
+  HelperBuf=(uint8_t*) calloc(sizeBuf,1);
+
+  	  GFX_td *HelperStruct;
+  	  HelperStruct  = (GFX_td*) malloc(  sizeof(GFX_td) );
+
+   HelperStruct->OutBuffer=HelperBuf;
+   HelperStruct->WindowHeigh=Image->WindowWidth;
+   HelperStruct->WindowWidth=Image->WindowHeigh;
+
+  	  //rotate 90 degree anticlockwise
+  if(axis == 1)
+  { for(r = 0; r < inrows; r++)
+        { for(c = 0; c < incol; c++ )
+                {
+            int color=	GFX_ReadPixel(Image,r, incol-c);
+            	GFX_DrawPixel(HelperStruct,r,c, color);
+                 }}
+  }
+  if(axis == 0)
+  { for(r = 0; r < inrows; r++)
+        { for(c = 0; c < incol; c++ )
+                {
+            int color=	GFX_ReadPixel(Image,inrows-r,c);
+            	GFX_DrawPixel(HelperStruct,r,c, color);
+                 }}
+  }
+
+memset(Image->OutBuffer,0x00,sizeBuf);
+
+memcpy(Image->OutBuffer,HelperBuf,sizeBuf);
+
+free(HelperStruct);
+free(HelperBuf);
+
+  return 0;
 }
 
 int GFX_Copy(GFX_td *outBUF, int inrows, int incol, GFX_td *inBUF)
@@ -612,12 +648,70 @@ int GFX_Copy(GFX_td *outBUF, int inrows, int incol, GFX_td *inBUF)
         {
                 for(c = 0; c < incol; c++ )
                 {
-                int color=	SSD1306_ReadPixelColor(inBUF,r, c);
+                int color=	GFX_ReadPixel(inBUF,r, c);
                 	GFX_DrawPixel(outBUF,r, c, color);
                 }
         }
   return 0;
 }
+
+int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift)
+{
+	  int c,r;//counters for rows and columns
+	  static int processtate=0;
+
+	  GFX_ClearBuffer(ImageOut,inrows, incol);
+
+	  for(r = 0; r < inrows; r++)
+	        { for(c = 0; c < incol; c++ )
+	                {
+	            int color=	GFX_ReadPixel(ImageIn,processtate +r,c);
+	            	GFX_DrawPixel(ImageOut,r,c, color);
+	                 }}
+	  processtate++;
+  	  if(processtate>=numRowShift)
+  	  {
+  		  int helper=processtate;
+  		processtate=0;
+  		return helper;
+  	  }
+  	  return processtate;
+}
+
+int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift, int HALF)
+{
+	  int c,r;//counters for rows and columns
+	  static int processtate=0;
+	  static int flowprocess=0;
+
+	  GFX_ClearBuffer(ImageOut,inrows, incol);
+	  for(r = 0; r < inrows; r++)
+	        { for(c = 0; c < incol; c++ )
+	                {
+	            int color=	GFX_ReadPixel(ImageIn,r,processtate+c);
+	            	GFX_DrawPixel(ImageOut,r,c, color);
+	                 }}
+	  processtate++;
+
+		  for(r = 0; r < inrows; r++)
+		        { for(c = 0; c < 1; c++ )
+		                {
+		        	int color=	GFX_ReadPixel(ImageIn,r,c);
+		        	GFX_DrawPixel(ImageOut,r,7+c, color);
+		                 }}
+		  	  //inrows-r-1, incol-c-2
+
+
+	  	  if(processtate>=numRowShift)
+	  	  {
+	  		  int helper=processtate;
+	  		processtate=0;
+	  		flowprocess=0;
+	  		return helper;
+	  	  }
+	  	  return processtate;
+}
+
 
 
 void GFX_SetFont(const uint8_t* font_t)

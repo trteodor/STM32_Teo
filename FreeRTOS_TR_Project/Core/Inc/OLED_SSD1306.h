@@ -38,8 +38,10 @@
 //
 // Resolution
 //
+
 #define SSD1306_LCDWIDTH                  128
 #define SSD1306_LCDHEIGHT                 64
+#define SSD1306divider
 
 /*
  * 		Please set what functionality you want to use.
@@ -145,7 +147,7 @@ void SSD1306_SetContrast(uint8_t Contrast);
 // Drawing
 //
 void SSD1306_DrawPixel(GFX_td *GFXstr ,int16_t x, int16_t y, uint8_t Color);
-void SSD1306_Clear(GFX_td *GFXstr,uint8_t Color);
+void SSD1306_Clear(GFX_td *GFXstr,int16_t rows,int16_t cols);
 void SSD1306_Display(GFX_td *GFXstr);
 void SSD1306_Bitmap(uint8_t *bitmap);
 

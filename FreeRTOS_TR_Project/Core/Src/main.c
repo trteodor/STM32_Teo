@@ -46,13 +46,14 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-uint8_t Windowbuffer[SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH];
-GFX_td GFX_window1;
-uint8_t Windowbuffer2[500]={0};
+
+uint8_t Windowbuffer2[200]={0};
 GFX_td GFX_window2;
 
-uint8_t Windowbuffer3[500]={0};
+uint8_t Windowbuffer3[300]={0};
 GFX_td GFX_window3;
+uint8_t Windowbuffer4[300]={0};
+GFX_td GFX_window4;
 
 /* USER CODE END PM */
 
@@ -105,60 +106,69 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  GFX_window1.OutBuffer=Windowbuffer;
-  GFX_window1.WindowWidth=SSD1306_LCDWIDTH;
-
-  GFX_window2.OutBuffer=Windowbuffer2;
-  GFX_window2.WindowWidth=44;    //Letter size 5+1 for space yhmm
-  GFX_window2.WindowHeigh=30;
-
-  GFX_window3.OutBuffer=Windowbuffer3;
-  GFX_window3.WindowWidth=24;
-  GFX_window3.WindowHeigh=8;
+  	  //Create Windows
+  GFX_td *MainWindow    = GFX_CreateScreen();
+  GFX_td *WindowS1      = GFX_CreateWindow(120,16);
+  GFX_td *WindowVerScr  = GFX_CreateWindow(120,16);
+  GFX_td *WindowHorScr  =GFX_CreateWindow(60,8);
 
   GFX_SetFont(font_8x5);
   GFX_SetFontSize(1);
-
   SSD1306_I2cInit(&hi2c1);
-
 
   SSD1306_Bitmap((uint8_t*)picture);
   HAL_Delay(200);
 
-  uint16_t frames = 0, zmiana = 0;
-
+  uint16_t zmiana = 0;
   char zmiana_c[20];
+  uint32_t zT1=0;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  		  zmiana = frames;
+	  		  zmiana++;
 	  	if(hi2c1.hdmatx->State == HAL_DMA_STATE_READY)
 	  	{
-	  		SSD1306_Clear(&GFX_window1,BLACK);
+	  		for(int i=0; i<200; i++)
+	  		{
+	  			Windowbuffer2[i]=0;
+	  		}
+	  		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+
+
 			sprintf(zmiana_c, "ILOSC: %02d", zmiana);
-	  		GFX_DrawString(&GFX_window1,10,10, zmiana_c, WHITE, BLACK);
+	  		GFX_DrawString(MainWindow,10,10, zmiana_c, WHITE, BLACK);
 
-  		//sprintf(zmiana_c, "D");
-	  	//	GFX_DrawCircle(&GFX_window1,80, 30, 18, WHITE);
-	  	//	GFX_DrawLine(&GFX_window1,80, 30, 40, 45, WHITE);
-	  		GFX_DrawString(&GFX_window1,25,50, "TEŁODOR", WHITE, BLACK);
-	  		frames++;
+	  		GFX_ClearBuffer(WindowS1,WindowS1->WindowWidth, WindowS1->WindowHeigh);
+	  		GFX_DrawString(WindowS1,0,0, "POZDRAWIAM ALLS", WHITE, BLACK);
 
-			//GFX_DrawString(&GFX_window3,0,0, "FFF", WHITE, BLACK);
-	  		GFX_DrawString(&GFX_window2,0,0, "TRAW", WHITE, BLACK);
-			GFX_rotate(&GFX_window2, 24, 8, 1, -90);
-		  		GFX_PutWindow(&GFX_window2, &GFX_window1, 15, 32);
+			GFX_PutWindow(WindowS1, MainWindow, 5, 20);
+		  	GFX_PutWindow(WindowVerScr, MainWindow, 20, 32);
+		  	GFX_PutWindow(WindowHorScr, MainWindow, 20, 56);
 
-		  		GFX_DrawCircle(&GFX_window1, 90, 10, 10, 1);
 
-	  		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
-	  		SSD1306_Display(&GFX_window1);
+	  		if( (zT1+100) < HAL_GetTick() )
+	  		{
+	  			zT1=HAL_GetTick();
+//			  	GFX_WindowRotate(WindowS1, 24, 8, 1, 90);
+//			  	GFX_Window_ScrollRight(ImageIn, ImageOut, inrows, incol, color, numRowShift)
+	  			//GFX_Window_Hor_ScrollRight(WindowS1, WindowVerScr, 40, 8, 1, 60);
+//	  			GFX_Window_VerScroll(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift)
+		  		GFX_ClearBuffer(WindowVerScr,WindowVerScr->WindowWidth, WindowVerScr->WindowHeigh);
+	  			GFX_Window_VerScrollFlow(WindowS1, WindowVerScr , 80, 8, 1, 8,0);
+		  		GFX_ClearBuffer(WindowHorScr,WindowHorScr->WindowWidth, WindowHorScr->WindowHeigh);
+	  			GFX_Window_Hor_ScrollRight(WindowS1, WindowHorScr,40, 8,1, 70);
+	  		}
+
+		  		GFX_DrawCircle(MainWindow, 90, 10, 10, 1);
+		  		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 1);
+		  		SSD1306_Display(MainWindow);
 	  	}
 	  	  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, 0);
-	  	  HAL_Delay(500);
+	  	  HAL_Delay(10);
 
     /* USER CODE END WHILE */
 

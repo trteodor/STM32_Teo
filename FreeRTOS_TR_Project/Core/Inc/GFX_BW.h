@@ -40,6 +40,20 @@ typedef struct __GFX_td
 #define PIXEL_WHITE	WHITE
 #define PIXEL_INVERSE	INVERSE
 
+
+
+#define DividerToPixel 8
+#define LCDWIDTH       128
+#define LCDHEIGHT      64
+
+//This value depend from your screen
+		/*For example, monochrome in 1 byte is 8pixel in hor
+		 * ciezko to wyjasnic, ae problem jest taki ze w korowym
+		 * bedzie trzeba mnozyc i wtedy to makro chyba jako 1/8 wystarczy zapisac
+		 *  ae nwm w sumie
+		 *  ale jest makro wiec juz cos mozna podziałać
+		 */
+
 #define USING_STRINGS 1 // 0 - do not compile, 1 - compile
 
 #define USING_IMAGE 1
@@ -83,12 +97,16 @@ typedef struct __GFX_td
 #define FILL_CIRCLE_HELPER
 #endif
 
-#if USING_STRINGS == 1
-/*
- *
- */
 
+//Windows
+GFX_td* GFX_CreateWindow(int sizeWidth, int sizeHigh);
+GFX_td* GFX_CreateScreen();
+void GFX_ClearBuffer(GFX_td *GFXstr,int16_t x, int16_t y);
 
+int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift);
+int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int incol,uint8_t color, int numRowShift, int HALF);
+int GFX_WindowMirror(GFX_td *Image, int inrows, int incol,uint8_t color, int axis);
+int GFX_WindowRotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle);
 void GFX_PutWindow(GFX_td *InBuf,GFX_td *ScrOutBuf,int place_x_put, int place_y_put);
 
 void GFX_SetFont(const uint8_t* font_t);
@@ -98,7 +116,7 @@ uint8_t GFX_GetFontWidth(void);
 uint8_t  GFX_GetFontSize(void);
 void GFX_DrawChar(GFX_td *GFXstr,int x, int y, char chr, uint8_t color, uint8_t background);
 void GFX_DrawString(GFX_td *GFXstr,int x, int y, char* str, uint8_t color, uint8_t background);
-#endif
+
 
 #if USING_LINES == 1
 void GFX_DrawLine(GFX_td *GFXstr,int x_start, int y_start, int x_end, int y_end, uint8_t color);
@@ -134,7 +152,7 @@ void GFX_Image_P(int x, int y, uint8_t *img, uint8_t w, uint8_t h, uint8_t color
 #endif
 #if STM32_USING ==1
 
-int GFX_rotate(GFX_td *Image, int inrows, int incol,uint8_t color, int angle);
+
 void GFX_Image(GFX_td *GFXstr,int x, int y, const uint8_t *img, uint8_t w, uint8_t h, uint8_t color);
 #if USING_IMAGE_ROTATE == 1
 void GFX_ImageRotate(GFX_td *GFXstr, int x, int y, const uint8_t *img, uint8_t w, uint8_t h, uint8_t color, uint16_t angle);

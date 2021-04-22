@@ -17,6 +17,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="E:\STM32_Teo\LL_UART_ECHO_DMA_IDLE"/>
 			<item value="C:\TouchGFXProjects\Projektxxxd"/>
 			<item value="C:\TouchGFXProjects\MyApplication_5"/>
 			<item value="C:\Users\Teodor\STM32Cube\Repository\STM32Cube_FW_F4_V1.26.0\Projects\STM324x9I_EVAL\Examples\FMC\FMC_SDRAM_DataMemory\SW4STM32\STM324x9I_EVAL"/>
@@ -31,14 +32,14 @@
 		</list>
 	</section>
 	<section name="org.eclipse.text.quicksearch.internal.ui.QuickSearchDialog.DIALOG_SETTINGS">
-		<item key="LAST_QUERY" value="O"/>
+		<item key="LAST_QUERY" value="def"/>
 		<item key="PATH_FILTER" value=""/>
 		<item key="CASE_SENSITIVE" value="true"/>
 		<item key="KEEP_OPEN" value="false"/>
 		<list key="COLUMN_WIDTHS">
 			<item value="40"/>
 			<item value="400"/>
-			<item value="103"/>
+			<item value="426"/>
 		</list>
 		<list key="SASH_WEIGHTS">
 			<item value="714"/>
@@ -46,7 +47,7 @@
 		</list>
 		<section name="DialogBoundsSettings">
 			<item key="DIALOG_HEIGHT" value="500"/>
-			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_WIDTH" value="923"/>
 			<item key="DIALOG_X_ORIGIN" value="668"/>
 			<item key="DIALOG_Y_ORIGIN" value="200"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

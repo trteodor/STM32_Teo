@@ -448,6 +448,7 @@ uint8_t* Vertical_Scroll_Flow(uint8_t *BIT_MAP, uint8_t Row_Count, uint32_t Czas
 		   l++;
 	   }
 
+
 	   if( k== (Row_Count+1) || (HALF &&   k==( Row_Count/2) + 1 ) )
 	   {
 		   k=0; l=0;
