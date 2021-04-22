@@ -660,6 +660,9 @@ int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int 
 	  int c,r;//counters for rows and columns
 	  static int processtate=0;
 
+  	  ImageOut->WindowHeigh=incol;
+  	  ImageOut->WindowWidth=inrows;
+
 	  GFX_ClearBuffer(ImageOut,inrows, incol);
 
 	  for(r = 0; r < inrows; r++)
@@ -668,6 +671,14 @@ int GFX_Window_Hor_ScrollRight(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int 
 	            int color=	GFX_ReadPixel(ImageIn,processtate +r,c);
 	            	GFX_DrawPixel(ImageOut,r,c, color);
 	                 }}
+	  for(r = 0; r < processtate; r++)
+	        { for(c = 0; c < incol; c++ )
+	                {
+	        	int color=	GFX_ReadPixel(ImageIn,r,c);
+	        	GFX_DrawPixel(ImageOut,numRowShift-processtate+r,c, color);
+	                 }}
+	  	  //inrows-r-1, incol-c-2
+
 	  processtate++;
   	  if(processtate>=numRowShift)
   	  {
@@ -684,6 +695,9 @@ int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int in
 	  static int processtate=0;
 	  static int flowprocess=0;
 
+	  	  ImageOut->WindowHeigh=incol;
+	  	  ImageOut->WindowWidth=inrows;
+
 	  GFX_ClearBuffer(ImageOut,inrows, incol);
 	  for(r = 0; r < inrows; r++)
 	        { for(c = 0; c < incol; c++ )
@@ -691,18 +705,18 @@ int GFX_Window_VerScrollFlow(GFX_td *ImageIn,GFX_td *ImageOut,int inrows, int in
 	            int color=	GFX_ReadPixel(ImageIn,r,processtate+c);
 	            	GFX_DrawPixel(ImageOut,r,c, color);
 	                 }}
-	  processtate++;
+
 
 		  for(r = 0; r < inrows; r++)
-		        { for(c = 0; c < 1; c++ )
+		        { for(c = 0; c < processtate; c++ )
 		                {
 		        	int color=	GFX_ReadPixel(ImageIn,r,c);
-		        	GFX_DrawPixel(ImageOut,r,7+c, color);
+		        	GFX_DrawPixel(ImageOut,r,numRowShift-processtate+c, color);
 		                 }}
 		  	  //inrows-r-1, incol-c-2
+		  processtate++;
 
-
-	  	  if(processtate>=numRowShift)
+	  	  if(processtate>=numRowShift-1)
 	  	  {
 	  		  int helper=processtate;
 	  		processtate=0;
