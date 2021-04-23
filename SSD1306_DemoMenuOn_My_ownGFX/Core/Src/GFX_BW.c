@@ -1,3 +1,23 @@
+/*
+ *
+ *  *  The MIT License.
+ *  Created on: 23.04.2021
+ *      Author: Teodor Rosolowski
+ * 	    trteodor@gmail.com
+ *
+ *      Added Few Function and modified
+ *
+ *
+ * GFX_BW.c
+ *			Based on:
+ *					GFX_BW.c
+ *  				The MIT License.
+ *  				Created on: 25.05.2017
+ *     				 Author: Mateusz Salamon
+ *     				 www.msalamon.pl
+ *     				 mateusz@msalamon.pl
+ */
+
 
 
 #include "main.h"

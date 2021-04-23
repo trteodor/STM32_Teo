@@ -1,27 +1,26 @@
 /*
- * GFX_BW.h
  *
- *  The MIT License.
- *  Created on: 25.05.2017
- *      Author: Mateusz Salamon
- *      www.msalamon.pl
- *      mateusz@msalamon.pl
+ *  *  The MIT License.
+ *  Created on: 23.04.2021
+ *      Author: Teodor Rosolowski
+ *
+ *      Added Few Function and modified
+ *
+ *
+ * GFX_BW.h
+ *			Based on:
+ *					GFX_BW.h
+ *  				The MIT License.
+ *  				Created on: 25.05.2017
+ *     				 Author: Mateusz Salamon
+ *     				 www.msalamon.pl
+ *     				 mateusz@msalamon.pl
  */
 
 #ifndef GFX_BW_H_
 #define GFX_BW_H_
 
-/***************************************************************
- *
- * 		SETTINGS
- *
- * 		Please set what functionality you want to use.
- * 		Some functions need other functionalities. It should works automatically.
- *
- * 		1 - will be compiled
- * 		0 - won't be compiled
- *
- * */
+
 
 typedef struct __GFX_td
 {
@@ -48,7 +47,7 @@ typedef struct __GFX_td
 
 //This value depend from your screen
 		/*For example, monochrome in 1 byte is 8pixel in hor
-		 * ciezko to wyjasnic, ae problem jest taki ze w korowym
+		 * ciezko to wyjasnic, ae problem jest taki ze w kolorowym
 		 * bedzie trzeba mnozyc i wtedy to makro chyba jako 1/8 wystarczy zapisac
 		 *  ae nwm w sumie
 		 *  ale jest makro wiec juz cos mozna podziałać

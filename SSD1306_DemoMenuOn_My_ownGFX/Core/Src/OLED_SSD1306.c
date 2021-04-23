@@ -1,11 +1,21 @@
 /*
- * OLED_SSD1306.c
  *
- *  The MIT License.
- *  Created on: 27.01.2017
- *      Author: Mateusz Salamon
- *      www.msalamon.pl
- *      mateusz@msalamon.pl
+ *  *  The MIT License.
+ *  Created on: 23.04.2021
+ *      Author: Teodor Rosolowski
+ *	    trteodor@gmail.com
+ *
+ *      Added Few Function and modified
+ *
+ *
+ * OLED_SSD1306
+ *			Based on:
+ *					 OLED_SSD1306.c
+ *  				 The MIT License.
+ *  				 Created on: 27.01.2017
+ *     				 Author: Mateusz Salamon
+ *      			 www.msalamon.pl
+ *     				 mateusz@msalamon.pl
  */
 
 #include "OLED_SSD1306.h"

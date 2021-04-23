@@ -18,7 +18,6 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
@@ -28,6 +27,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "OLED_SSD1306_Task.h"
+
+#include "BMPXX80.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +60,10 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	OLED_Button_CallBack(GPIO_Pin);
+}
 /* USER CODE END 0 */
 
 /**
@@ -94,6 +98,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  OLED_Init();
+
 uint32_t LedTime=0;
   /* USER CODE END 2 */
 
@@ -101,12 +107,14 @@ uint32_t LedTime=0;
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  OLED_SSD1306Task();
-	//  if((LedTime+200) < HAL_GetTick() )
-	//  {
-	//	  LedTime=HAL_GetTick();
+	  OLED_Task();
+
+	  if((LedTime+200) < HAL_GetTick() )
+	  {
+		  LedTime=HAL_GetTick();
 		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-	//  }
+		 // HAL_GPIO_TogglePin(LD_GR_GPIO_Port, LD_GR_Pin);
+	  }
 
 
     /* USER CODE END WHILE */
