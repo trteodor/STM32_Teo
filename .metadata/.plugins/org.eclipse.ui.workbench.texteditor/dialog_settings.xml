@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="shiftval"/>
+		<item key="selection" value="IR_T"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="t2"/>
+			<item value="IR_RECIVER_GPIO_SOURCE_PIN"/>
+			<item value="GPIO_PortSourceGPIOC"/>
+			<item value=" GPIO_PortSourceGPIOC"/>
+			<item value="add"/>
 			<item value="shiftval"/>
 			<item value="Circ"/>
 			<item value="MenuState"/>
@@ -18,13 +23,9 @@
 			<item value="MainWindow"/>
 			<item value="CallBack"/>
 			<item value="Call"/>
-			<item value="weak"/>
-			<item value="font"/>
-			<item value="#include"/>
-			<item value="SSD1306_ReadPixelColor"/>
-			<item value="Read"/>
 		</list>
 		<list key="replacehistory">
+			<item value="IR_T"/>
 			<item value="ProgramState"/>
 			<item value=""/>
 			<item value="LED_State"/>

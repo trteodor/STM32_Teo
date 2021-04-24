@@ -3,7 +3,7 @@
  *  *  The MIT License.
  *  Created on: 23.04.2021
  *      Author: Teodor Rosolowski
- *
+ * 	    trteodor@gmail.com
  *      Added Few Function and modified
  *
  *

@@ -1,0 +1,4 @@
+stm32f10x_conf.h
+Plik skopiowany z katalogu Project/Template biblioteki STM32.
+Usunięto z niego włączanie plików nagłówkowych biblioteki,
+aby przerwać cykle w ich włączaniu.

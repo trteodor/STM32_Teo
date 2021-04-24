@@ -13,6 +13,8 @@
 #include "stdlib.h"
 #include "string.h"
 #include "i2c.h"
+#include "tim.h"
+#include "usart.h"
 
 #include "font_8x5.h"
 #include "OLED_SSD1306.h"
@@ -20,10 +22,12 @@
 #include "picture.h"
 
 #include "BMPXX80.h"
+#include "TSOP2236_new_T.h"
+#include "hcsr04.h"
 
 extern void OLED_Init();
 extern void OLED_Task();
-extern void OLED_Button_CallBack(uint16_t GPIO_Pin);
+extern void OLED_EXTI_CallBack(uint16_t GPIO_Pin);
 
 
 #endif /* INC_OLED_SSD1306_TASK_H_ */

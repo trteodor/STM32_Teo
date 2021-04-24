@@ -43,16 +43,28 @@ GFX_td *WindowVerStrH=0;
 
 //end section
 
-
+//bmp280
 float temperature, huminidity;
 int32_t pressure;
+//hcsr04
+char buf[30];
+uint8_t len;
+float Distance;
+//TSOP2236
+RC5Struct TSOP4836;
+uint16_t RC5_RecDat;
+uint8_t RC5_RecAddr;
+
 
 void OLED_Init()
 {
 
 					MainWindow= GFX_CreateScreen();  //Create Main Bufor Frame Pointer
 
+					HAL_TIM_Base_Start_IT(&htim2);
+					RC5_INIT(&TSOP4836);
 
+					HCSR04_Init(&htim1);
 					  BMP280_Init(&hi2c1, BMP280_TEMPERATURE_16BIT, BMP280_STANDARD, BMP280_FORCEDMODE);
 
 					GFX_SetFont(font_8x5);
@@ -65,13 +77,9 @@ void OLED_Init()
 }
 void OLED_Task()
 {
-
-
-
 	OLED_PickButton_Task();
 	OLED_ShiftButton_Task();
 	OLED_ActiveTask();
-
 }
 
 
@@ -96,6 +104,19 @@ void OLED_ActiveTask()
 
 
 					}
+
+					   if(RC5_ReadNormal(&TSOP4836,&RC5_RecDat)==RC5_OK)
+					  		  {
+
+					  			  		  len = sprintf(buf, "IR Data: %04x\n\r", RC5_RecDat);  //sprintf returning lenght
+					  			  					  		  HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
+					  		  }
+					   HCSR04_Read(&Distance);
+					  if( Distance < 50)
+						  {
+						  len = sprintf(buf, "Distance: %.2f\n\r", Distance);
+						  HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
+						  }
 			}
 }
 void OLED_PickButton_Task()
@@ -261,7 +282,7 @@ void OLED_ShiftButton_Task()
 	}
 }
 
-void OLED_Button_CallBack(uint16_t GPIO_Pin) //Called in interrupt exti
+void OLED_EXTI_CallBack(uint16_t GPIO_Pin) //Called in interrupt exti
 {
 	if(ButtonDelay+200 <HAL_GetTick() )
 	{
@@ -275,10 +296,11 @@ void OLED_Button_CallBack(uint16_t GPIO_Pin) //Called in interrupt exti
 		{
 			ButtonFlag=Button2Flag;
 		}
-		if(GPIO_Pin==BUT3_Pin)
-		{
-			ButtonFlag=Button3Flag;
-		}
+	}
+
+	if(GPIO_Pin==GPIO_PIN_3)
+	{
+		RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction(&TSOP4836);
 	}
 
 }
@@ -390,10 +412,10 @@ void DrawBMP280Sensor()
 		GFX_SetFontSize(1);
 		GFX_DrawString(MainWindow, 5, 16, "Temperatura[C]:", WHITE, BLACK);
 		sprintf(strhbuf,"%f",temperature);
-		GFX_DrawString(MainWindow, 5, 24, strhbuf, WHITE, BLACK);
-		GFX_DrawString(MainWindow, 5, 32, "Cisnienie[PA]:", WHITE, BLACK);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+		GFX_DrawString(MainWindow, 5, 40, "Cisnienie[PA]:", WHITE, BLACK);
 		sprintf(strhbuf,"%lu",pressure);
-		GFX_DrawString(MainWindow, 5, 40, strhbuf, WHITE, BLACK);
+		GFX_DrawString(MainWindow, 5, 52, strhbuf, WHITE, BLACK);
 		SSD1306_Display(MainWindow);
 }
 
@@ -518,7 +540,7 @@ void DrawHead(GFX_td *Window,int elofnum,int allselnum, char* String)
 	GFX_SetFontSize(1);
 	GFX_DrawString(Window,10,0,StringP, WHITE, BLACK);
 	sprintf(StringP,"%i of %i", elofnum,allselnum);
-	GFX_DrawString(Window,80,0,StringP, WHITE, BLACK);
+	GFX_DrawString(Window,70,0,StringP, WHITE, BLACK);
 	GFX_DrawLine(Window, 0, 15, 120, 15, WHITE);
 
 	free(StringP);

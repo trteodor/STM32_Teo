@@ -1,0 +1,5 @@
+Podłączony programator (np. wiggler) może podtrzymywać zasilanie
+domeny BKP w trybie czuwania. Zerowanie rejestrów BKP wykonuje się
+za pomocą przycisku tamper (PC13 - SW4). Przycisk tamper działa też
+w trybie czuwania. Wartości domyślne zostaną przywrócone, gdy
+przycisk tamper zostanie użyty właśnie w trybie czuwania.

@@ -1,0 +1,8 @@
+stm32f107rb.lds
+stm32f107rc.lds
+stm32f107vb.lds
+stm32f107vc.lds
+cortex-m3.lds
+Skrypty dla konsolidatora, utworzone na podstawie pliku
+/Project/Template/RIDE/stm32f10x_flash_extsram.ld
+zawartego w wersji 3.1.0 biblioteki STM32.

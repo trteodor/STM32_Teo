@@ -1,0 +1,29 @@
+makefile.in
+Wspólna część skryptów programu make dla wszystkich przykładów
+
+makefile
+Skrypt budujący wszystkie przykłady
+
+parport.cfg
+stm32_2.cfg
+Skrypty przetestowane z OpenOCD w wersji 0.2.0, przykładowe polecenie
+openocd -f parport.cfg -f stm32_2.cfg
+
+olimex-arm-usb-tiny-h.cfg
+stm32_4.cfg
+Skrypty przetestowane z OpenOCD w wersji 0.4.0, przykładowe polecenie
+openocd -f olimex-arm-usb-tiny-h.cfg -f stm32_4.cfg
+
+stm32f1x.cfg
+Skrypt przetestowany z OpenOCD w wersji 0.5.0, przykładowe polecenie
+openocd -f olimex-arm-usb-tiny-h.cfg -f stm32f1x.cfg
+
+flash.sh
+Klient programu OpenOCD ładujacy obraz pamięci Flash, łączy się
+z serwerem OpenOCD nasłuchującym na portcie 4444. Składnia wywołania
+./flash.sh [plik.bin]
+
+qf1
+Skrypt uruchamiający OpenOCD 0.5.0 i ładujacy obraz pamięci Flash, nie
+wymaga uruchamiania serwera OpenOCD. Składnia wywołania
+./qf1 [plik.bin]

@@ -21,6 +21,7 @@
 #include "main.h"
 #include "dma.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -28,7 +29,6 @@
 /* USER CODE BEGIN Includes */
 #include "OLED_SSD1306_Task.h"
 
-#include "BMPXX80.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,14 +56,34 @@ volatile uint16_t timer_1s;
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
 
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	OLED_Button_CallBack(GPIO_Pin);
+	OLED_EXTI_CallBack(GPIO_Pin);
 }
+
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim)
+{
+	HCSR04_TIM_IC_CaptureCallback(htim);
+}
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance==TIM2)
+	{
+		RC5_100usTimer();
+	}
+
+}
+
+
+
+
+
+
 /* USER CODE END 0 */
 
 /**
@@ -97,10 +117,13 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_USART3_UART_Init();
+  MX_TIM1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
 
-uint32_t LedTime=0;
+	uint32_t LedTime=0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,9 +134,10 @@ uint32_t LedTime=0;
 
 	  if((LedTime+200) < HAL_GetTick() )
 	  {
+
+
 		  LedTime=HAL_GetTick();
 		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		 // HAL_GPIO_TogglePin(LD_GR_GPIO_Port, LD_GR_Pin);
 	  }
 
 

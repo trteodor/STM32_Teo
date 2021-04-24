@@ -1,0 +1,15 @@
+startup_stm32_cld.c
+Plik startowy dla STM32 connectivity line devices,
+utworzony na podstawie pliku
+Libraries/CMSIS/Core/CM3/startup/gcc/startup_stm32f10x_cl.s
+z wersji 3.1.0 biblioteki STM32.
+
+board_*.c
+Pliki zawierające funkcje, które zależą od konfiguracji sprzętu.
+
+util_*.c
+Pliki zawierające funkcje, które nie zależą od konfiguracji sprzętu,
+choć nadal mogą zależeć od architektury mikrokrokontrolera.
+
+ex_*.c
+Pliki zawierające funkcję main przykładów.

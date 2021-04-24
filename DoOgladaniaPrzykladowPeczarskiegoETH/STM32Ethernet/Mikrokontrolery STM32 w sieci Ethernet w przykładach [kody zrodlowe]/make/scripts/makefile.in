@@ -1,0 +1,151 @@
+TOOLCHAIN = arm-none-eabi
+#TOOLCHAIN = arm-elf
+CC        = $(TOOLCHAIN)-gcc
+AS        = $(TOOLCHAIN)-as
+AR        = $(TOOLCHAIN)-ar
+OBJCOPY   = $(TOOLCHAIN)-objcopy
+
+IPV        = 4
+EXDIR      = ../../examples
+STLIBDIR   = ../../st/Libraries
+LWIPDIR    = ../../lwip-1.4.0/src
+
+ifeq ($(hardware),)
+  hardware=zl29arm+zl3eth
+endif
+
+ifeq ($(hardware),zl29arm+zl3eth)
+  HWDIR    = $(hardware)
+  STFLAGS  = -DUSE_STDPERIPH_DRIVER \
+             -DSTM32F10X_CL \
+             -DHSE_VALUE=10000000
+endif
+ifeq ($(hardware),butterfly)
+  HWDIR    = $(hardware)
+  STFLAGS  = -DUSE_STDPERIPH_DRIVER \
+             -DSTM32F10X_CL \
+             -DHSE_VALUE=25000000
+endif
+ifeq ($(hardware),prototype)
+  HWDIR    = $(hardware)
+  STFLAGS  = -DUSE_STDPERIPH_DRIVER \
+             -DSTM32F10X_CL \
+             -DHSE_VALUE=25000000
+endif
+LIBDIR     = ../../make/lib/$(HWDIR)
+IPFLAGS    =
+FLAGS      = -mthumb -mcpu=cortex-m3
+CPPFLAGS  +=
+CFLAGS    += $(FLAGS) -O2 -c -Wall -g \
+             -ffunction-sections -fdata-sections \
+             -I$(EXDIR)/include \
+             -I$(EXDIR)/include/$(HWDIR) \
+             -I$(STLIBDIR)/STM32F10x_StdPeriph_Driver/inc \
+             -I$(STLIBDIR)/STM32_ETH_Driver/inc \
+             -I$(STLIBDIR)/CMSIS/CM3/CoreSupport \
+             -I$(STLIBDIR)/CMSIS/CM3/DeviceSupport/ST/STM32F10x \
+             -I$(LWIPDIR)/include \
+             -I$(LWIPDIR)/include/ipv$(IPV)
+ASFLAGS   += $(FLAGS) -g -warn
+LDFLAGS   += $(FLAGS) -nostartfiles -L$(LIBDIR) -L$(EXDIR)/scripts \
+             -Tstm32f107vc.lds -Wl,--gc-sections
+
+CSRCS      = $(filter %.c, $(SOURCES))
+OBJECTS    = $(patsubst %.s, %.o, $(filter %.s, $(SOURCES))) \
+             $(patsubst %.c, %.o, $(filter %.c, $(SOURCES))) \
+             $(filter %.o, $(SOURCES))
+LIBRARIES  = $(filter %.a, $(SOURCES))
+STLIBSRCS  = $(wildcard \
+                $(STLIBDIR)/STM32F10x_StdPeriph_Driver/src/*.c \
+                $(STLIBDIR)/STM32_ETH_Driver/src/*.c \
+                $(STLIBDIR)/CMSIS/CM3/CoreSupport/*.c \
+                $(STLIBDIR)/CMSIS/CM3/DeviceSupport/ST/STM32F10x/*.c \
+              )
+STLIBOBJS  = $(patsubst %.c, %.o, $(notdir $(STLIBSRCS)))
+# Wszystkie pliki
+# LWIPSRCS   = $(wildcard \
+#                $(LWIPDIR)/api/*.c \
+#                $(LWIPDIR)/core/*.c \
+#                $(LWIPDIR)/core/ipv$(IPV)/*.c \
+#                $(LWIPDIR)/core/snmp/*.c \
+#                $(LWIPDIR)/netif/etharp.c \
+#               )
+# Tylko potrzebne pliki
+LWIPSRCS   = $(wildcard \
+               $(LWIPDIR)/core/*.c \
+               $(LWIPDIR)/core/ipv$(IPV)/*.c \
+               $(LWIPDIR)/netif/etharp.c \
+              )
+LWIPOBJS   = $(patsubst %.c, %.o, $(notdir $(LWIPSRCS)))
+
+vpath %.a $(LIBDIR)
+vpath %.c $(EXDIR)/src \
+          $(STLIBDIR)/STM32F10x_StdPeriph_Driver/src \
+          $(STLIBDIR)/STM32_ETH_Driver/src \
+          $(STLIBDIR)/CMSIS/CM3/CoreSupport \
+          $(STLIBDIR)/CMSIS/CM3/DeviceSupport/ST/STM32F10x \
+          $(LWIPDIR)/api \
+          $(LWIPDIR)/core \
+          $(LWIPDIR)/core/ipv$(IPV) \
+          $(LWIPDIR)/core/snmp \
+          $(LWIPDIR)/netif
+vpath %.o $(LIBDIR)
+vpath %.s $(EXDIR)/src
+$(shell mkdir -p $(LIBDIR))
+
+.PHONY : all targets clean
+.INTERMEDIATE : $(STLIBOBJS) $(LWIPOBJS)
+
+ifneq ($(MAKECMDGOALS),clean)
+  include $(LIBDIR)/stm32f10x.d
+  include $(LIBDIR)/lwip$(IPV).d
+  include example.d
+endif
+
+targets : $(addprefix $(hardware)_, $(TARGETS))
+
+libstm32f10x.a : $(STLIBOBJS)
+	$(AR) -rcs $(LIBDIR)/$@ $^
+
+$(STLIBOBJS) : %.o : %.c
+	$(CC) $(CPPFLAGS) $(STFLAGS) $(CFLAGS) $< -o $@
+
+$(LIBDIR)/stm32f10x.d :
+	$(CC) -MM $(CPPFLAGS) $(STFLAGS) $(CFLAGS) \
+	$(STLIBSRCS) > $(LIBDIR)/stm32f10x.d
+
+liblwip$(IPV).a : $(LWIPOBJS)
+	$(AR) -rcs $(LIBDIR)/$@ $^
+
+$(LWIPOBJS) : %.o : %.c
+	$(CC) $(CPPFLAGS) $(IPFLAGS) $(CFLAGS) $< -o $@
+
+$(LIBDIR)/lwip$(IPV).d :
+	$(CC) -MM $(CPPFLAGS) $(IPFLAGS) $(CFLAGS) \
+	$(LWIPSRCS) > $(LIBDIR)/lwip$(IPV).d
+
+%.o : %.c 
+	$(CC) $(CPPFLAGS) $(STFLAGS) $(IPFLAGS) $(CFLAGS) $< \
+	-o $(LIBDIR)/$@
+
+%.o : %.s
+	$(AS) $(ASFLAGS) $< -o $(LIBDIR)/$@
+
+%.elf : $(OBJECTS) $(LIBRARIES)
+	$(CC) $(LDFLAGS) $(addprefix $(LIBDIR)/, $(OBJECTS)) \
+	$(subst lib, -l, $(basename $(LIBRARIES))) -o $@
+
+%.hex : %.elf
+	$(OBJCOPY) $< $@ -O ihex
+
+%.bin : %.elf
+	$(OBJCOPY) $< $@ -O binary
+
+example.d :
+	$(CC) -MM $(CPPFLAGS) $(STFLAGS) $(IPFLAGS) $(CFLAGS) \
+	$(wildcard $(CSRCS) $(addprefix $(EXDIR)/src/, $(CSRCS))) \
+	> example.d
+
+clean :
+	rm -f $(hardware)*.bin $(hardware)*.elf $(hardware)*.hex \
+	linux*.elf *.o *~ *.bak *.d

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="SearchDialog">
-		<item key="PREVIOUS_PAGE" value="org.eclipse.search.internal.ui.text.TextSearchPage"/>
+		<item key="PREVIOUS_PAGE" value="org.eclipse.cdt.ui.pdomSearchPage"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -132,8 +132,5 @@
 			<item value="zmiana"/>
 			<item value="RecivedData"/>
 		</list>
-	</section>
-	<section name="">
-		<item key="org.eclipse.search.resultpage.limit" value="1000"/>
 	</section>
 </section>

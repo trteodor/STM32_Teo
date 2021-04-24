@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:I2C_Scanner Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_Adv_Working_SSD1306\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_FreeRtos_Project\ Debug/activeLaunchMode=run

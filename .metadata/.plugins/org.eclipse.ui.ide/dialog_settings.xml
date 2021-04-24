@@ -17,6 +17,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Teodor\Desktop\HCSR04_nonblocking_STM32-master"/>
+			<item value="C:\Users\Teodor\Desktop\BMXX80_STM32_HAL-master"/>
 			<item value="E:\STM32_Teo\LL_UART_ECHO_DMA_IDLE"/>
 			<item value="C:\TouchGFXProjects\Projektxxxd"/>
 			<item value="C:\TouchGFXProjects\MyApplication_5"/>
