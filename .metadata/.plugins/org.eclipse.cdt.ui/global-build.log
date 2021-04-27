@@ -9561,3 +9561,34 @@ Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
  
 Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
  
+23:55:23 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/OLED_SSD1306_Task.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OLED_SSD1306_Task.d" -MT"Core/Src/OLED_SSD1306_Task.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OLED_SSD1306_Task.o"
+arm-none-eabi-gcc -o "SSD1306_DemoMenuOn_My_ownGFX.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\SSD1306_DemoMenuOn_My_ownGFX\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SSD1306_DemoMenuOn_My_ownGFX.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: SSD1306_DemoMenuOn_My_ownGFX.elf
+ 
+arm-none-eabi-objdump -h -S  SSD1306_DemoMenuOn_My_ownGFX.elf  > "SSD1306_DemoMenuOn_My_ownGFX.list"
+arm-none-eabi-objcopy  -O binary  SSD1306_DemoMenuOn_My_ownGFX.elf  "SSD1306_DemoMenuOn_My_ownGFX.bin"
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67416	    500	   2632	  70548	  11394	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
+ 
+ 
+Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
+ 
+23:55:28 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67416	    500	   2632	  70548	  11394	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 
+23:55:53 **** Incremental Build of configuration Debug for project SSD1306_DemoMenuOn_My_ownGFX ****
+make -j8 all 
+arm-none-eabi-size   SSD1306_DemoMenuOn_My_ownGFX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  67416	    500	   2632	  70548	  11394	SSD1306_DemoMenuOn_My_ownGFX.elf
+Finished building: default.size.stdout
+ 

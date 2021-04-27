@@ -20,10 +20,11 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LwIP_HTTP_Server_Socket_RTOS\ D
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LwIP_TCP_Echo_Server\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:MenuLauncher-STM32H747I-DISCO\ Debug_CM7/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NucleoRC522Test\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:NucleoRC522Test\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFID-przYTC8\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFIDtest1\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:RFIDtest1\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_withDMA\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F103RB-Nucleo\ Debug/activeLaunchMode=run
