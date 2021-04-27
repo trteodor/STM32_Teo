@@ -1,6 +1,8 @@
 /*
  * OLED_SSD1306_Tasks.c
  *
+ * This file is an example of using a prepared GFX with a display based on the SSD1306 driver
+ *
  *  Created on: Apr 22, 2021
  *      Author: Teodor
  *      trteodor@gmail.com
@@ -24,6 +26,13 @@ void OLED_PickButton_Task();
 void OLED_ShiftButton_Task();
 void OLED_ActiveTask();
 void DrawBMP280Sensor();
+void DrawHCSR04();
+void DrawRC5_TSOP4438();
+void DrawMPU6050();
+void DrawReflective();;
+void DrawFotoResistor();
+void mMFRC522ReadBlock();
+void DrawMFRC522();
 
 int ButtonFlag=0;
 uint32_t ButtonDelay=0;
@@ -49,11 +58,28 @@ int32_t pressure;
 //hcsr04
 char buf[30];
 uint8_t len;
-float Distance;
+float DistanceHCS04;
 //TSOP2236
 RC5Struct TSOP4836;
-uint16_t RC5_RecDat;
-uint8_t RC5_RecAddr;
+uint8_t TSOP_RecDat;
+uint8_t TSOP_RecAddr;
+uint16_t TSOP_NormRecData;
+//MPU6050
+MPU6050_t MPU6050;
+
+//ADC
+struct ADC1Dat
+{
+	uint32_t CzOdb;
+	uint32_t FotoRez;
+}ADC1Dat;
+//MFRC522
+uint8_t str[MAX_LEN];
+uint8_t UID[5];
+uint8_t  FACTORY_KEY[] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
+uint8_t W[]="POZDRAWIAM";
+uint8_t R[16];
+
 
 
 void OLED_Init()
@@ -63,15 +89,19 @@ void OLED_Init()
 
 					HAL_TIM_Base_Start_IT(&htim2);
 					RC5_INIT(&TSOP4836);
+					  HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&ADC1Dat, 2); //ADC for FotoRez and reflective sensor
+					  MFRC522_Init();
 
 					HCSR04_Init(&htim1);
 					  BMP280_Init(&hi2c1, BMP280_TEMPERATURE_16BIT, BMP280_STANDARD, BMP280_FORCEDMODE);
+
+					 MPU6050_Init(&hi2c1);
 
 					GFX_SetFont(font_8x5);
 					GFX_SetFontSize(1);
 					SSD1306_I2cInit(&hi2c1);
 					SSD1306_Bitmap((uint8_t*)picture);
-					HAL_Delay(200);
+					HAL_Delay(2020);
 					DrawMainMenu(MainWindow,ProgramState);
 					SSD1306_Display(MainWindow);
 }
@@ -85,7 +115,7 @@ void OLED_Task()
 
 void OLED_ActiveTask()
 {
-	if( (OL_Time+30) < HAL_GetTick())
+	if( (OL_Time+60) < HAL_GetTick())  //minimum delay time is around 80ms because better wait on end data transfer on i2c line OLED data with DMA
 			{
 				OL_Time=HAL_GetTick();
 
@@ -100,25 +130,46 @@ void OLED_ActiveTask()
 								case 201:
 								DrawGFXDemo(MainWindow);
 								break;
+								case 120:
+									   HCSR04_Read(&DistanceHCS04);
+									  if( DistanceHCS04 < 50)
+										  {
+										  len = sprintf(buf, "DistanceHCS04: %.2f\n\r", DistanceHCS04);
+										  //HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
+										  }
+									DrawHCSR04();
+									break;
+								case 130:
+									//RC5_ReadAddresAndData(&TSOP4836, &TSOP_RecDat, &TSOP_RecAddr);
+									RC5_ReadNormal(&TSOP4836, &TSOP_NormRecData);
+									DrawRC5_TSOP4438();
+									break;
+								case 140:			//Akcelerometer MPU6050
+//									MPU6050_Read_All(&hi2c1, &MPU6050);
+									MPU6050_Read_Temp(&hi2c1, &MPU6050);
+									DrawMPU6050();
+									break;
+								case 150:			//FotoRes
+								DrawFotoResistor();
+								break;
+								case 160:			//Refl
+								DrawReflective();
+								break;
+								case 170:			//RC522
+									mMFRC522ReadBlock();
+									DrawMFRC522();
+								break;
 								}
+						}
+
+
 
 
 					}
 
-					   if(RC5_ReadNormal(&TSOP4836,&RC5_RecDat)==RC5_OK)
-					  		  {
 
-					  			  		  len = sprintf(buf, "IR Data: %04x\n\r", RC5_RecDat);  //sprintf returning lenght
-					  			  					  		  HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
-					  		  }
-					   HCSR04_Read(&Distance);
-					  if( Distance < 50)
-						  {
-						  len = sprintf(buf, "Distance: %.2f\n\r", Distance);
-						  HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
-						  }
-			}
 }
+
 void OLED_PickButton_Task()
 {
 	uint32_t zProgramState=ProgramState;
@@ -150,27 +201,41 @@ void OLED_PickButton_Task()
 
 		case 3:
 		break;
-		case 4:
+		case 4: 						//HCSR04 - active task
 				ProgramState=110;
 					ButtonFlag=0;
 		break;
-		case 5:
+		case 5:  //Akcelerometer //ACtiv
+			ProgramState=140;
+								ButtonFlag=0;
 		break;
 		case 6:
+			ProgramState=150; 		//FotoRez //ACtiv
+									ButtonFlag=0;
 		break;
 		case 7:
+			ProgramState=160;	//Refl Sensor  //ACtiv
+									ButtonFlag=0;
 		break;
 		case 8:
+			ProgramState=120;  //HCSR04
+					ButtonFlag=0;
 		break;
 		case 9:
+			ProgramState=170;  //MSRC522 -- RFID
+					ButtonFlag=0;
+		break;
+		case 10:
+			ProgramState=130;  //TSOP4438 -- active task
+					ButtonFlag=0;
 		break;
 											//Above 100 is the led menu
 		case 101:
-			HAL_GPIO_WritePin(LD_GR_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);  //zapal diode
+			HAL_GPIO_WritePin(LD_GR_GPIO_Port, LD_GR_Pin, GPIO_PIN_RESET);  //zapal diode
 			ButtonFlag=0;
 		break;
 		case 102:
-			HAL_GPIO_WritePin(LD_GR_GPIO_Port, LD2_Pin, GPIO_PIN_SET);	//zgas diode
+			HAL_GPIO_WritePin(LD_GR_GPIO_Port, LD_GR_Pin, GPIO_PIN_SET);	//zgas diode
 			ButtonFlag=0;
 		break;
 		case 103:
@@ -184,7 +249,37 @@ void OLED_PickButton_Task()
 			ButtonFlag=0;
 			DrawMainMenu(MainWindow,ProgramState);
 			break;
+		case 120:  //HCSR04
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
 
+		case 130:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
+		case 140:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
+		case 150:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
+		case 160:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
+		case 170:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
 		case 201:
 			ProgramState=1;
 			ButtonFlag=0;
@@ -243,7 +338,7 @@ void OLED_ShiftButton_Task()
 			ButtonFlag=0;
 					break;
 		case 8:
-			ProgramState=DrawMainMenu(MainWindow,9);
+			ProgramState=DrawMainMenu(MainWindow,9); //MFRC522
 			ButtonFlag=0;
 					break;
 		case 9:
@@ -298,15 +393,12 @@ void OLED_EXTI_CallBack(uint16_t GPIO_Pin) //Called in interrupt exti
 		}
 	}
 
-	if(GPIO_Pin==GPIO_PIN_3)
+	if(GPIO_Pin==GPIO_PIN_7)
 	{
 		RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction(&TSOP4836);
 	}
 
 }
-
-
-
 
 int DrawLedMenu(GFX_td *MainMenu, int value)
 {
@@ -419,6 +511,125 @@ void DrawBMP280Sensor()
 		SSD1306_Display(MainWindow);
 }
 
+void DrawHCSR04()
+{
+	char head[20]="HCSR_04";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+		GFX_DrawString(MainWindow, 5, 16, "Zmierzona", WHITE, BLACK);
+		GFX_DrawString(MainWindow, 5, 28, "Odleglosc[cm]:", WHITE, BLACK);
+		sprintf(strhbuf,"%.2f\n\r", DistanceHCS04);
+		GFX_DrawString(MainWindow, 5, 40, strhbuf, WHITE, BLACK);
+		SSD1306_Display(MainWindow);
+}
+
+void DrawRC5_TSOP4438()
+{
+	char head[20]="TSOP4438";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+		GFX_DrawString(MainWindow, 5, 16, "Ost. Odcz. Wart:", WHITE, BLACK);
+		//sprintf(strhbuf,"0x%x", TSOP_RecAddr);
+		//GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+		//GFX_DrawString(MainWindow, 5, 40, "Wartosc:", WHITE, BLACK);
+		//sprintf(strhbuf,"0x%x", TSOP_RecDat);
+		//GFX_DrawString(MainWindow, 5, 52, strhbuf, WHITE, BLACK);
+		GFX_DrawString(MainWindow, 5, 28, "16bit HEX Value", WHITE, BLACK);
+		sprintf(strhbuf,"0x %x", TSOP_NormRecData);
+		GFX_DrawString(MainWindow, 5, 40, strhbuf, WHITE, BLACK);
+		SSD1306_Display(MainWindow);
+}
+
+void DrawMPU6050()
+{
+	char head[20]="MPU6050";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+		GFX_DrawString(MainWindow, 5, 16, "Tempratura[C]", WHITE, BLACK);
+		sprintf(strhbuf,"T:%.2f", MPU6050.Temperature);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+
+		SSD1306_Display(MainWindow);
+}
+void DrawReflective()
+{
+	char head[20]="Reflective";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+
+		GFX_DrawString(MainWindow, 5, 16, "Wartosc ADC:", WHITE, BLACK);
+		sprintf(strhbuf,"%lu ", ADC1Dat.CzOdb);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+
+		SSD1306_Display(MainWindow);
+}
+
+void DrawMFRC522()
+{
+	char head[20]="MFRC522";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+
+		GFX_DrawString(MainWindow, 5, 16, "UID:", WHITE, BLACK);
+		sprintf(strhbuf,"%02X:%02X:%02X:%02X:%02X",UID[0],UID[1],UID[2],UID[3],UID[4]);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+
+		GFX_DrawString(MainWindow, 5, 40, "Sek0 Block2:", WHITE, BLACK);
+		sprintf(strhbuf,"%s", R);
+		GFX_DrawString(MainWindow, 5, 52,strhbuf, WHITE, BLACK);
+
+		SSD1306_Display(MainWindow);
+}
+
+void mMFRC522ReadBlock()
+{
+	if((MFRC522_Request(PICC_REQIDL, str)==MFRC522_OK))
+	{
+		if (MFRC522_Anticoll(str)==MFRC522_OK)
+		{
+			memcpy(UID, str, 5);
+			MFRC522_SelectTag(str);
+			MFRC522_Auth(PICC_AUTHENT1A,2,FACTORY_KEY,UID);
+		//	MFRC522_WriteBlock((uint8_t)2 , W);
+			MFRC522_ReadBlock( 2, R);
+			MFRC522_DeAuth();
+		}
+			HAL_Delay(1);
+	}
+}
+
+
+void DrawFotoResistor()
+{
+	char head[20]="FotoResist";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+
+		GFX_DrawString(MainWindow, 5, 16, "Wartosc ADC:", WHITE, BLACK);
+		sprintf(strhbuf,"%lu ", ADC1Dat.FotoRez);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+
+		SSD1306_Display(MainWindow);
+}
+
 int DrawMainMenu(GFX_td *MainMenu, int value)
 {
 	char head[20]="MainMenu";
@@ -432,7 +643,7 @@ int DrawMainMenu(GFX_td *MainMenu, int value)
 	char el7[20]="ODB_LM";
 	char el8[20]="ODL_HC04";
 	char el9[20]="RFID_522";
-	char el10[20]="IR_2248";
+	char el10[20]="IR_4438";
 #define conutel 10
 
 

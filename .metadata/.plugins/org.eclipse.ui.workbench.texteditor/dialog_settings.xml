@@ -1,43 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="IR_T"/>
+		<item key="selection" value="MPU6050"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="t2"/>
-			<item value="IR_RECIVER_GPIO_SOURCE_PIN"/>
-			<item value="GPIO_PortSourceGPIOC"/>
-			<item value=" GPIO_PortSourceGPIOC"/>
-			<item value="add"/>
-			<item value="shiftval"/>
-			<item value="Circ"/>
-			<item value="MenuState"/>
-			<item value="value++;"/>
-			<item value="if(ButtonFlag==Button1Flag){"/>
-			<item value="Button2Flag"/>
-			<item value="dfgdfg"/>
-			<item value="MainWindow"/>
-			<item value="CallBack"/>
-			<item value="Call"/>
+			<item value="mpu6050"/>
+			<item value="GRAPHIC_ACCELERATION_COMMANDS"/>
+			<item value="Init"/>
+			<item value="SSD1306_I2C_DMA_ENABLE"/>
+			<item value="I2C_WaitOnFlagUntilTimeout"/>
+			<item value="Read_MFRC522"/>
+			<item value="KEY"/>
+			<item value="AntennaOff"/>
+			<item value="AntennaOn"/>
+			<item value="ClearBitMask"/>
+			<item value="Write_MFRC522"/>
+			<item value="uint8_t MFR"/>
+			<item value="void MFRC52"/>
+			<item value="uint8_t"/>
+			<item value="serNum"/>
 		</list>
 		<list key="replacehistory">
-			<item value="IR_T"/>
-			<item value="ProgramState"/>
-			<item value=""/>
-			<item value="LED_State"/>
-			<item value="MainMenu"/>
-			<item value="GFX_ReadPixel"/>
-			<item value="GFX_ReadPixel(GFX_td *GFXstr,int16_t x, int16_t y)"/>
-			<item value="Image"/>
-			<item value="USARTX-&gt;UART_DMA_RX_CHANNEL"/>
-			<item value="USARTX-&gt;Instance"/>
-			<item value="USARTX-&gt;UART_DMA_TX_CHANNEL"/>
-			<item value="yoffset=1"/>
-			<item value="Zacznij_Wpr_Od"/>
+			<item value="MFRC522_Read"/>
+			<item value="MFRC522_AntennaOff"/>
+			<item value="MFRC522_AntennaOn"/>
+			<item value="MFRC522_ClearBitMask"/>
+			<item value="MFRC522_Write"/>
+			<item value="MFRC522_StatusHandle MFR"/>
+			<item value="MFRC522_StatusHandle MFRC52"/>
+			<item value="CS_PIN"/>
+			<item value="CS_PORT"/>
+			<item value="GPIO_PIN_6"/>
+			<item value="GPIOB"/>
+			<item value="RC522_Pin"/>
+			<item value="RC522_GPIO_Port"/>
+			<item value="RC522_CS_Pin"/>
+			<item value="RC522_CS_GPIO_Port"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,11 +1,13 @@
 /*
- * IR_TSOP2236_byTEOR.c
+ * TSOP2236_new_T.h
  *
- *  Created on: 6 wrz 2020
- *   trteodor@gmail.com
- *      Author: Teodor
+ *  Created on: 20 ap. 2021
+ *  trteodor@gmail.com
+ *  	The Mit License
+ *      Author: Teodor Rosolowski
+ *      https://github.com/trteodor
  *
-*/
+ */
 #include "TSOP2236_new_T.h"
 #include <stdlib.h>
 

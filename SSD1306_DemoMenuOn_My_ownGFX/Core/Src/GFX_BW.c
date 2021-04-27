@@ -4,13 +4,14 @@
  *  Created on: 23.04.2021
  *      Author: Teodor Rosolowski
  * 	    trteodor@gmail.com
+ *      Added/Deleted Few Function and modified
  *
- *      Added Few Function and modified
+ *		I Add, structures, dynamic allocate memory and windows. Also i modified most of features.
+ *		The functions added entirely by me contain the prefix Window
  *
- *
- * GFX_BW.c
+ * GFX_BW.h
  *			Based on:
- *					GFX_BW.c
+ *					GFX_BW.h
  *  				The MIT License.
  *  				Created on: 25.05.2017
  *     				 Author: Mateusz Salamon

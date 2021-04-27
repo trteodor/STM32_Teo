@@ -55,7 +55,6 @@ void SSD1306_DrawPixel(GFX_td *GFXstr,int16_t x, int16_t y, uint8_t Color)
 {
 	 if ((x < 0) || (x >= SSD1306_LCDWIDTH) || (y < 0) || (y >= SSD1306_LCDHEIGHT))
 		 return;
-
 	 switch(Color)
 	 {
 		 case WHITE:   GFXstr->OutBuffer[x+ (y/8)*GFXstr->WindowWidth] |=  (1 << (y&7)); break;
@@ -67,16 +66,9 @@ void SSD1306_DrawPixel(GFX_td *GFXstr,int16_t x, int16_t y, uint8_t Color)
 uint8_t SSD1306_ReadPixelColor(GFX_td *InBuf,uint16_t x,uint16_t y)
 {
 	uint8_t color;
-
-
-
 	color=(InBuf->OutBuffer[x+ ((y/8)*InBuf->WindowWidth) ]);
-
 		uint8_t z=y%8;
-
 	color= color & (1<< z&0xFF);
-
-
 	if(color)
 	{
 		color=1;
@@ -87,8 +79,6 @@ uint8_t SSD1306_ReadPixelColor(GFX_td *InBuf,uint16_t x,uint16_t y)
 	}
 	return color;
 }
-
-
 //
 // Configuration functions
 //
@@ -289,7 +279,7 @@ void SSD1306_Display(GFX_td *GFXstr)
 		HAL_I2C_Mem_Write_DMA(ssd1306_i2c, SSD1306_I2C_ADDRESS, 0x40, 1, GFXstr->OutBuffer, (SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8));
 	}
 #else
-	HAL_I2C_Mem_Write(ssd1306_i2c, SSD1306_I2C_ADDRESS, 0x40, 1, GFXstr->OutBufferż, (SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8), 100);
+	HAL_I2C_Mem_Write(ssd1306_i2c, SSD1306_I2C_ADDRESS, 0x40, 1, GFXstr->OutBuffer, (SSD1306_LCDHEIGHT * SSD1306_LCDWIDTH / 8), 100);
 #endif
 }
 
