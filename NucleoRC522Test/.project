@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
+	<name>RFID-przYTC8</name>
+=======
 	<name>NucleoRC522Test</name>
+>>>>>>> dc952f2 (Frist CommitNucleo)
 	<comment></comment>
 	<projects>
 	</projects>

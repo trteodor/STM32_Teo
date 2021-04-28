@@ -81,6 +81,8 @@ void HAL_MspInit(void)
   /* USER CODE END MspInit 1 */
 }
 
+<<<<<<< HEAD
+=======
 /**
 * @brief SPI MSP Initialization
 * This function configures the hardware resources used in this example
@@ -214,6 +216,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 
 }
 
+>>>>>>> dc952f2 (Frist CommitNucleo)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

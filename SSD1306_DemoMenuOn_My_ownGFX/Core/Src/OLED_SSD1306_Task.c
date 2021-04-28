@@ -89,6 +89,8 @@ float complexABS(float real, float compl) {
 	return sqrtf(real*real+compl*compl);
 }
 
+
+//
 FftData_t FftData;
 uint16_t AdcMicrophone[FFT_SAMPLES];
 float FFTInBuffer[FFT_SAMPLES];
@@ -96,7 +98,7 @@ float FFTOutBuffer[FFT_SAMPLES];
 arm_rfft_fast_instance_f32 FFTHandler;
 
 
-arm_rfft_fast_instance_f32 FFTHandler;
+//arm_rfft_fast_instance_f32 FFTHandler;  //Dont have inaf memory for this lib
 FftData_t FftData;
 int Freqs[FFT_SAMPLES];
 int FreqPoint = 0;
@@ -169,12 +171,7 @@ void OLED_ActiveTask()
 								DrawGFXDemo(MainWindow);
 								break;
 								case 120:
-									   HCSR04_Read(&DistanceHCS04);
-									  if( DistanceHCS04 < 50)
-										  {
-										  len = sprintf(buf, "DistanceHCS04: %.2f\n\r", DistanceHCS04);
-										  //HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, 20);
-										  }
+									HCSR04_Read(&DistanceHCS04);
 									DrawHCSR04();
 									break;
 								case 130:
@@ -198,7 +195,7 @@ void OLED_ActiveTask()
 									DrawMFRC522();
 								break;
 								case 180:			//Micro
-									//CalculateFFT();
+									//CalculateFFT();  //Dont have inaf memory for this lib
 									DrawFFT_Micro();
 								break;
 								}
@@ -669,7 +666,7 @@ void mMFRC522ReadBlock()
 }
 
 
-void CalculateFFT()
+void CalculateFFT()  //Dont have inaf memory for this lib
 {
 	if(MicrophoneDataReady)
 	{

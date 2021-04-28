@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * RC522 Simple Lib  -  Test
  *
@@ -12,8 +11,6 @@
 
 
 
-=======
->>>>>>> dc952f2 (Frist CommitNucleo)
 #include "rc522.h"
 
 //Definitions pertaining to my device

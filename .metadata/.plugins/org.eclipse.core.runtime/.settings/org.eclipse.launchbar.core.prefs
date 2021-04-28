@@ -1,7 +1,7 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:T11_L57_RTOS_SimpleProject_FFT Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX Debug
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TSOP2236 RC5 STM32F1test Debug
 eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_Adv_Working_SSD1306\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:F103_FreeRtos_Project\ Debug/activeLaunchMode=run
@@ -11,6 +11,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS-tr\ Debug/activeLaunch
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_TR_Project\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:FreeRTOS_TR_Project\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:I2C_Scanner\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:I2C_Scanner\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LFEK_v4_Project\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:LL_UART_ECHO\ Debug/activeLaunchMode=run
@@ -29,6 +30,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_DemoMenuOn_My_ownGFX\ D
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:SSD1306_withDMA\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F103RB-Nucleo\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32gfxfristlook\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:TSOP2236\ RC5\ STM32F1test\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:UART_DMA.elf/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75\ Debug/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:WYSWTLACZ_HUB75a\ Debug/activeLaunchMode=run

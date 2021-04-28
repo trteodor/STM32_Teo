@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="MPU6050"/>
+		<item key="selection" value=" HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value=" HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef"/>
+			<item value=" HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc);"/>
+			<item value="CpltCallBack"/>
 			<item value="mpu6050"/>
 			<item value="GRAPHIC_ACCELERATION_COMMANDS"/>
 			<item value="Init"/>
@@ -20,9 +23,6 @@
 			<item value="ClearBitMask"/>
 			<item value="Write_MFRC522"/>
 			<item value="uint8_t MFR"/>
-			<item value="void MFRC52"/>
-			<item value="uint8_t"/>
-			<item value="serNum"/>
 		</list>
 		<list key="replacehistory">
 			<item value="MFRC522_Read"/>

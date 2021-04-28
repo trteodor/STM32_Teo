@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * RC522 Simple Lib  -  Test
  *
@@ -11,8 +10,6 @@
  */
 
 
-=======
->>>>>>> dc952f2 (Frist CommitNucleo)
 
 typedef enum{
 	MFRC522_OK,

@@ -58,6 +58,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+<<<<<<< HEAD
+=======
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
 #define B1_EXTI_IRQn EXTI15_10_IRQn
@@ -73,6 +75,7 @@ void Error_Handler(void);
 #define SWO_GPIO_Port GPIOB
 #define SPI1_CS_Pin GPIO_PIN_6
 #define SPI1_CS_GPIO_Port GPIOB
+>>>>>>> dc952f2 (Frist CommitNucleo)
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

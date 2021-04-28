@@ -19,11 +19,24 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+<<<<<<< HEAD
+#include "spi.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "stdio.h"
+#include "rc522.h"
+#include "stdio.h"
+#include "string.h"
+=======
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "rc522.h"
 #include <string.h>
+>>>>>>> dc952f2 (Frist CommitNucleo)
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,9 +54,12 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
+<<<<<<< HEAD
+=======
 SPI_HandleTypeDef hspi1;
 
 UART_HandleTypeDef huart2;
+>>>>>>> dc952f2 (Frist CommitNucleo)
 
 /* USER CODE BEGIN PV */
 uint8_t str[MAX_LEN];
@@ -55,9 +71,12 @@ uint8_t R[16];
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+<<<<<<< HEAD
+=======
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_SPI1_Init(void);
+>>>>>>> dc952f2 (Frist CommitNucleo)
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -95,16 +114,41 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+<<<<<<< HEAD
+  MX_SPI1_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+  MFRC522_Init();
+=======
   MX_USART2_UART_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
    MFRC522_Init();
+>>>>>>> dc952f2 (Frist CommitNucleo)
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+<<<<<<< HEAD
+	  HAL_Delay(100);
+		if((MFRC522_Request(PICC_REQIDL, str)==MFRC522_OK))
+		{
+			if (MFRC522_Anticoll(str)==MFRC522_OK)
+			{
+				memcpy(serNum, str, 5);
+				MFRC522_SelectTag(str);
+				MFRC522_Auth(PICC_AUTHENT1A,2,KEY,serNum);
+				HAL_Delay(10);
+				MFRC522_WriteBlock((uint8_t)2 , W);
+				HAL_Delay(10);
+				MFRC522_ReadBlock( 2, R);
+				MFRC522_DeAuth();
+			}
+				HAL_Delay(1);
+		}
+=======
 		  HAL_Delay(100);
 			if((MFRC522_Request(PICC_REQIDL, str)==MFRC522_OK))
 			{
@@ -122,6 +166,7 @@ int main(void)
 					HAL_Delay(1);
 			}
 		//  HAL_GPIO_TogglePin(, LD_GR_Pin);
+>>>>>>> dc952f2 (Frist CommitNucleo)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -141,12 +186,22 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
+<<<<<<< HEAD
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
+=======
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI_DIV2;
   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL16;
+>>>>>>> dc952f2 (Frist CommitNucleo)
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -166,6 +221,8 @@ void SystemClock_Config(void)
   }
 }
 
+<<<<<<< HEAD
+=======
 /**
   * @brief SPI1 Initialization Function
   * @param None
@@ -274,6 +331,7 @@ static void MX_GPIO_Init(void)
 
 }
 
+>>>>>>> dc952f2 (Frist CommitNucleo)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */

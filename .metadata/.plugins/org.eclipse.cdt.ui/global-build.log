@@ -667,3 +667,1193 @@ Finished building: SSD1306_DemoMenuOn_My_ownGFX.bin
  
 Finished building: SSD1306_DemoMenuOn_My_ownGFX.list
  
+17:21:57 **** Incremental Build of configuration Debug for project I2C_Scanner ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:96:7: error: 'result' undeclared (first use in this function)
+   96 |       result = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 2, 2);
+      |       ^~~~~~
+../Core/Src/main.c:96:7: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:96:57: error: 'i' undeclared (first use in this function)
+   96 |       result = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 2, 2);
+      |                                                         ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:111:3: error: expected identifier or '(' before 'while'
+  111 |   while (1)
+      |   ^~~~~
+../Core/Src/main.c:118:1: error: expected identifier or '(' before '}' token
+  118 | }
+      | ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:22:08 **** Incremental Build of configuration Debug for project I2C_Scanner ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:96:7: error: 'result' undeclared (first use in this function)
+   96 |       result = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 2, 2);
+      |       ^~~~~~
+../Core/Src/main.c:96:7: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:96:57: error: 'i' undeclared (first use in this function)
+   96 |       result = HAL_I2C_IsDeviceReady(&hi2c1, (uint16_t)(i<<1), 2, 2);
+      |                                                         ^
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+17:23:21 **** Incremental Build of configuration Debug for project I2C_Scanner ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "I2C_Scanner.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\I2C_Scanner\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_Scanner.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_Scanner.elf
+ 
+arm-none-eabi-objdump -h -S  I2C_Scanner.elf  > "I2C_Scanner.list"
+arm-none-eabi-objcopy  -O binary  I2C_Scanner.elf  "I2C_Scanner.bin"
+arm-none-eabi-size   I2C_Scanner.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18456	    120	   1880	  20456	   4fe8	I2C_Scanner.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_Scanner.bin
+ 
+Finished building: I2C_Scanner.list
+ 
+17:23:46 **** Incremental Build of configuration Debug for project I2C_Scanner ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "I2C_Scanner.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\I2C_Scanner\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_Scanner.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_Scanner.elf
+ 
+arm-none-eabi-objdump -h -S  I2C_Scanner.elf  > "I2C_Scanner.list"
+arm-none-eabi-objcopy  -O binary  I2C_Scanner.elf  "I2C_Scanner.bin"
+arm-none-eabi-size   I2C_Scanner.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15096	     20	   1852	  16968	   4248	I2C_Scanner.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_Scanner.bin
+ 
+Finished building: I2C_Scanner.list
+ 
+17:24:01 **** Incremental Build of configuration Debug for project I2C_Scanner ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "I2C_Scanner.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\I2C_Scanner\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="I2C_Scanner.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: I2C_Scanner.elf
+ 
+arm-none-eabi-objdump -h -S  I2C_Scanner.elf  > "I2C_Scanner.list"
+arm-none-eabi-objcopy  -O binary  I2C_Scanner.elf  "I2C_Scanner.bin"
+arm-none-eabi-size   I2C_Scanner.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15096	     20	   1852	  16968	   4248	I2C_Scanner.elf
+Finished building: default.size.stdout
+ 
+Finished building: I2C_Scanner.bin
+ 
+Finished building: I2C_Scanner.list
+ 
+17:33:12 **** Incremental Build of configuration Debug for project RFID-przYTC8 ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f103c8tx.d" -MT"Core/Startup/startup_stm32f103c8tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f103c8tx.o" "../Core/Startup/startup_stm32f103c8tx.s"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rc522.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/rc522.d" -MT"Core/Src/rc522.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rc522.o"
+arm-none-eabi-gcc "../Core/Src/spi.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/spi.d" -MT"Core/Src/spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/spi.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "RFID-przYTC8.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\RFID-przYTC8\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFID-przYTC8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RFID-przYTC8.elf
+ 
+arm-none-eabi-objdump -h -S  RFID-przYTC8.elf  > "RFID-przYTC8.list"
+arm-none-eabi-objcopy  -O binary  RFID-przYTC8.elf  "RFID-przYTC8.bin"
+arm-none-eabi-size   RFID-przYTC8.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9128	     40	   1760	  10928	   2ab0	RFID-przYTC8.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFID-przYTC8.bin
+ 
+Finished building: RFID-przYTC8.list
+ 
+17:35:28 **** Incremental Build of configuration Debug for project RFID-przYTC8 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rc522.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/rc522.d" -MT"Core/Src/rc522.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rc522.o"
+arm-none-eabi-gcc -o "RFID-przYTC8.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\RFID-przYTC8\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFID-przYTC8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RFID-przYTC8.elf
+ 
+arm-none-eabi-objdump -h -S  RFID-przYTC8.elf  > "RFID-przYTC8.list"
+arm-none-eabi-objcopy  -O binary  RFID-przYTC8.elf  "RFID-przYTC8.bin"
+arm-none-eabi-size   RFID-przYTC8.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9128	     40	   1760	  10928	   2ab0	RFID-przYTC8.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFID-przYTC8.bin
+Finished building: RFID-przYTC8.list
+ 
+ 
+17:36:46 **** Incremental Build of configuration Debug for project RFID-przYTC8 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "RFID-przYTC8.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\RFID-przYTC8\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RFID-przYTC8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RFID-przYTC8.elf
+ 
+arm-none-eabi-objdump -h -S  RFID-przYTC8.elf  > "RFID-przYTC8.list"
+arm-none-eabi-objcopy  -O binary  RFID-przYTC8.elf  "RFID-przYTC8.bin"
+arm-none-eabi-size   RFID-przYTC8.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9128	     40	   1760	  10928	   2ab0	RFID-przYTC8.elf
+Finished building: default.size.stdout
+ 
+Finished building: RFID-przYTC8.bin
+Finished building: RFID-przYTC8.list
+ 
+ 
+17:39:52 **** Build of configuration Debug for project NucleoRC522Test ****
+make -j8 all 
+arm-none-eabi-size   NucleoRC522Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9308	     40	   1760	  11108	   2b64	NucleoRC522Test.elf
+Finished building: default.size.stdout
+ 
+17:41:17 **** Incremental Build of configuration Debug for project NucleoRC522Test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/rc522.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/rc522.d" -MT"Core/Src/rc522.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/rc522.o"
+arm-none-eabi-gcc -o "NucleoRC522Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\NucleoRC522Test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="NucleoRC522Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: NucleoRC522Test.elf
+ 
+arm-none-eabi-objdump -h -S  NucleoRC522Test.elf  > "NucleoRC522Test.list"
+arm-none-eabi-objcopy  -O binary  NucleoRC522Test.elf  "NucleoRC522Test.bin"
+arm-none-eabi-size   NucleoRC522Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9296	     40	   1760	  11096	   2b58	NucleoRC522Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: NucleoRC522Test.bin
+Finished building: NucleoRC522Test.list
+ 
+ 
+17:41:23 **** Incremental Build of configuration Debug for project NucleoRC522Test ****
+make -j8 all 
+arm-none-eabi-size   NucleoRC522Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9296	     40	   1760	  11096	   2b58	NucleoRC522Test.elf
+Finished building: default.size.stdout
+ 
+17:55:10 **** Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc -mcpu=cortex-m3 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f103rbtx.d" -MT"Core/Startup/startup_stm32f103rbtx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f103rbtx.o" "../Core/Startup/startup_stm32f103rbtx.s"
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+   text	   data	    bss	    dec	    hex	filename
+   5528	     20	   1636	   7184	   1c10	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+17:59:47 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7412	     20	   1732	   9164	   23cc	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:00:02 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7412	     20	   1732	   9164	   23cc	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:01:56 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:13: error: 'TSOP4836' undeclared (first use in this function); did you mean 'TSOP2236'?
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+  106 |   RC5_INIT(&TSOP4836);
+      |             ^~~~~~~~
+      |             TSOP2236
+../Core/Src/main.c:106:13: note: each undeclared identifier is reported only once for each function it appears in
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/usart.o"
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:02:09 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8764	    120	   1768	  10652	   299c	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:03:53 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:3: error: 'size' undeclared (first use in this function); did you mean 'size_t'?
+  115 |   size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |   ^~~~
+      |   size_t
+../Core/Src/main.c:115:3: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:115:10: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  115 |   size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |          ^~~~~~~
+../Core/Src/main.c:115:10: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "TSOP2236_T.h"
+  +++ |+#include <stdio.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:115:30: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  115 |   size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |                              ^~~~~~~~~~~~~~~~
+      |                              |
+      |                              uint16_t {aka short unsigned int}
+../Core/Src/main.c:115:30: note: expected 'const char *' but argument is of type 'uint16_t' {aka 'short unsigned int'}
+../Core/Src/main.c:117:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  117 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:04:01 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:115:14: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  115 |   int size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |              ^~~~~~~
+../Core/Src/main.c:115:14: warning: incompatible implicit declaration of built-in function 'sprintf'
+../Core/Src/main.c:29:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   28 | #include "TSOP2236_T.h"
+  +++ |+#include <stdio.h>
+   29 | /* USER CODE END Includes */
+../Core/Src/main.c:115:34: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  115 |   int size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  uint16_t {aka short unsigned int}
+../Core/Src/main.c:115:34: note: expected 'const char *' but argument is of type 'uint16_t' {aka 'short unsigned int'}
+../Core/Src/main.c:117:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  117 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11232	    120	   1768	  13120	   3340	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:04:20 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:34: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  116 |   int size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  uint16_t {aka short unsigned int}
+In file included from ../Core/Src/main.c:29:
+c:\st\stm32cubeide_1.3.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\include\stdio.h:244:32: note: expected 'const char * restrict' but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |                                ^
+../Core/Src/main.c:118:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  118 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11232	    120	   1768	  13120	   3340	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:04:50 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:35: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  116 |   int size = sprintf("RecVal:%ul",TSOP_NormRecData);
+      |                                   ^~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   uint16_t {aka short unsigned int}
+In file included from ../Core/Src/main.c:29:
+c:\st\stm32cubeide_1.3.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\include\stdio.h:244:32: note: expected 'const char * restrict' but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |                                ^
+../Core/Src/main.c:118:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  118 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11232	    120	   1768	  13120	   3340	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:04:57 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:116:34: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast [-Wint-conversion]
+  116 |   int size = sprintf("RecVal:%i",TSOP_NormRecData);
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  uint16_t {aka short unsigned int}
+In file included from ../Core/Src/main.c:29:
+c:\st\stm32cubeide_1.3.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\include\stdio.h:244:32: note: expected 'const char * restrict' but argument is of type 'uint16_t' {aka 'short unsigned int'}
+  244 | int sprintf (char *__restrict, const char *__restrict, ...)
+      |                                ^
+../Core/Src/main.c:118:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  118 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11232	    120	   1768	  13120	   3340	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:05:34 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:30: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  118 |   HAL_UART_Transmit(&huart2, Recval, size , 100);
+      |                              ^~~~~~
+      |                              |
+      |                              char *
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:337,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:21:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:700:73: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+  700 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~^~~~~
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11236	    120	   1768	  13124	   3344	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:05:47 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11236	    120	   1768	  13124	   3344	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:06:02 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11236	    120	   1768	  13124	   3344	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:06:05 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11236	    120	   1768	  13124	   3344	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:06:33 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    120	   1768	  13200	   3390	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:06:35 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    120	   1768	  13200	   3390	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:06:49 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    120	   1768	  13200	   3390	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:07:20 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    120	   1768	  13200	   3390	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:07:47 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11312	    120	   1768	  13200	   3390	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:08:09 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11316	    120	   1768	  13204	   3394	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:08:23 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11316	    120	   1768	  13204	   3394	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:09:02 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1768	  13380	   3444	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:09:23 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1768	  13380	   3444	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:10:25 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1768	  13380	   3444	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:13:00 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:118:11: error: 'strhbuf' undeclared (first use in this function)
+  118 |   sprintf(strhbuf,"0x %x", TSOP_NormRecData);
+      |           ^~~~~~~
+../Core/Src/main.c:118:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:50: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:13:07 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:14:04 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:19:03 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+../Core/Src/TSOP_2236_T.c:21:1: warning: data definition has no type or storage class
+   21 | TimeDiffTableD[35];
+      | ^~~~~~~~~~~~~~
+../Core/Src/TSOP_2236_T.c:21:1: warning: type defaults to 'int' in declaration of 'TimeDiffTableD' [-Wimplicit-int]
+../Core/Src/TSOP_2236_T.c: In function 'RC5_INIT':
+../Core/Src/TSOP_2236_T.c:35:27: warning: assignment to 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'uint32_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+   35 |  RC5_Handle->TimeDiffTable= RC5_Time   //allocate tab for data
+      |                           ^
+../Core/Src/TSOP_2236_T.c:35:37: error: expected ';' before 'return'
+   35 |  RC5_Handle->TimeDiffTable= RC5_Time   //allocate tab for data
+      |                                     ^
+      |                                     ;
+   36 | return RC5_OK;
+      | ~~~~~~                               
+../Core/Src/TSOP_2236_T.c: In function 'RC5_100usTimer':
+../Core/Src/TSOP_2236_T.c:41:11: error: lvalue required as increment operand
+   41 |   RC5_Time++;
+      |           ^~
+../Core/Src/TSOP_2236_T.c: In function 'RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction':
+../Core/Src/TSOP_2236_T.c:47:46: warning: comparison between pointer and integer
+   47 |  if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+100 ) <   RC5_Time   )  ) //Receive Sync Header
+      |                                              ^
+../Core/Src/TSOP_2236_T.c:47:100: warning: comparison between pointer and integer
+   47 |  if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+100 ) <   RC5_Time   )  ) //Receive Sync Header
+      |                                                                                                    ^
+../Core/Src/TSOP_2236_T.c:53:41: warning: comparison between pointer and integer
+   53 |  if(RC5_Handle->ThisObjectRC5Time +500  < RC5_Time)
+      |                                         ^
+../Core/Src/TSOP_2236_T.c:57:55: warning: assignment to 'uint8_t' {aka 'unsigned char'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   57 |  RC5_Handle->TimeDiffTable[RC5_Handle->DataTableIndex]= RC5_Time-(RC5_Handle->ThisObjectRC5Time);
+      |                                                       ^
+../Core/Src/TSOP_2236_T.c:79:34: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   79 |     RC5_Handle->ThisObjectRC5Time=RC5_Time;
+      |                                  ^
+../Core/Src/TSOP_2236_T.c: In function 'RC5_INIT':
+../Core/Src/TSOP_2236_T.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+   37 | }
+      | ^
+make: *** [Core/Src/subdir.mk:46: Core/Src/TSOP_2236_T.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:19:07 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+../Core/Src/TSOP_2236_T.c:21:1: warning: data definition has no type or storage class
+   21 | TimeDiffTableD[35];
+      | ^~~~~~~~~~~~~~
+../Core/Src/TSOP_2236_T.c:21:1: warning: type defaults to 'int' in declaration of 'TimeDiffTableD' [-Wimplicit-int]
+../Core/Src/TSOP_2236_T.c: In function 'RC5_INIT':
+../Core/Src/TSOP_2236_T.c:35:27: warning: assignment to 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'uint32_t *' {aka 'long unsigned int *'} [-Wincompatible-pointer-types]
+   35 |  RC5_Handle->TimeDiffTable= RC5_Time;   //allocate tab for data
+      |                           ^
+../Core/Src/TSOP_2236_T.c: In function 'RC5_100usTimer':
+../Core/Src/TSOP_2236_T.c:41:11: error: lvalue required as increment operand
+   41 |   RC5_Time++;
+      |           ^~
+../Core/Src/TSOP_2236_T.c: In function 'RC5_IR_EXTI_GPIO_ReceiveAndDecodeFunction':
+../Core/Src/TSOP_2236_T.c:47:46: warning: comparison between pointer and integer
+   47 |  if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+100 ) <   RC5_Time   )  ) //Receive Sync Header
+      |                                              ^
+../Core/Src/TSOP_2236_T.c:47:100: warning: comparison between pointer and integer
+   47 |  if( ( (RC5_Handle->ThisObjectRC5Time+160 )  >  RC5_Time  &&  (RC5_Handle->ThisObjectRC5Time+100 ) <   RC5_Time   )  ) //Receive Sync Header
+      |                                                                                                    ^
+../Core/Src/TSOP_2236_T.c:53:41: warning: comparison between pointer and integer
+   53 |  if(RC5_Handle->ThisObjectRC5Time +500  < RC5_Time)
+      |                                         ^
+../Core/Src/TSOP_2236_T.c:57:55: warning: assignment to 'uint8_t' {aka 'unsigned char'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   57 |  RC5_Handle->TimeDiffTable[RC5_Handle->DataTableIndex]= RC5_Time-(RC5_Handle->ThisObjectRC5Time);
+      |                                                       ^
+../Core/Src/TSOP_2236_T.c:79:34: warning: assignment to 'uint32_t' {aka 'long unsigned int'} from 'uint32_t *' {aka 'long unsigned int *'} makes integer from pointer without a cast [-Wint-conversion]
+   79 |     RC5_Handle->ThisObjectRC5Time=RC5_Time;
+      |                                  ^
+make: *** [Core/Src/subdir.mk:46: Core/Src/TSOP_2236_T.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:19:31 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+../Core/Src/TSOP_2236_T.c: In function 'RC5_INIT':
+../Core/Src/TSOP_2236_T.c:35:27: warning: assignment to 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'uint8_t (*)[35]' {aka 'unsigned char (*)[35]'} [-Wincompatible-pointer-types]
+   35 |  RC5_Handle->TimeDiffTable=&TimeDiffTableD  //allocate tab for data
+      |                           ^
+../Core/Src/TSOP_2236_T.c:35:43: error: expected ';' before 'return'
+   35 |  RC5_Handle->TimeDiffTable=&TimeDiffTableD  //allocate tab for data
+      |                                           ^
+      |                                           ;
+   36 | return RC5_OK;
+      | ~~~~~~                                     
+../Core/Src/TSOP_2236_T.c:37:1: warning: control reaches end of non-void function [-Wreturn-type]
+   37 | }
+      | ^
+make: *** [Core/Src/subdir.mk:46: Core/Src/TSOP_2236_T.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+18:19:40 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+../Core/Src/TSOP_2236_T.c: In function 'RC5_INIT':
+../Core/Src/TSOP_2236_T.c:35:27: warning: assignment to 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'uint8_t (*)[35]' {aka 'unsigned char (*)[35]'} [-Wincompatible-pointer-types]
+   35 |  RC5_Handle->TimeDiffTable=&TimeDiffTableD;  //allocate tab for data
+      |                           ^
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1800	  13412	   3464	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:20:10 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1800	  13412	   3464	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:20:14 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11492	    120	   1800	  13412	   3464	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:21:29 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1800	  13416	   3468	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:21:52 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:21:56 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:22:47 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:23:20 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:23:48 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:24:53 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11504	    120	   1768	  13392	   3450	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:25:12 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11504	    120	   1768	  13392	   3450	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:25:31 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11504	    120	   1768	  13392	   3450	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+ 
+18:26:04 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:26:46 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:27:29 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:30:42 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/TSOP_2236_T.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/TSOP_2236_T.d" -MT"Core/Src/TSOP_2236_T.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/TSOP_2236_T.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:30:57 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+18:32:28 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_it.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f1xx_it.d" -MT"Core/Src/stm32f1xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f1xx.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f1xx.d" -MT"Core/Src/system_stm32f1xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f1xx.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc "../Core/Src/RC5 TSOP2236.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/RC5 TSOP2236.d" -MT"Core/Src/RC5 TSOP2236.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/RC5 TSOP2236.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "TSOP2236 RC5 STM32F1test.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\STM32_Teo\TSOP2236 RC5 STM32F1test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TSOP2236 RC5 STM32F1test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TSOP2236 RC5 STM32F1test.elf
+ 
+arm-none-eabi-objdump -h -S  TSOP2236\ RC5\ STM32F1test.elf  > "TSOP2236 RC5 STM32F1test.list"
+arm-none-eabi-objcopy  -O binary  TSOP2236\ RC5\ STM32F1test.elf  "TSOP2236 RC5 STM32F1test.bin"
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
+Finished building: TSOP2236 RC5 STM32F1test.bin
+ 
+Finished building: TSOP2236 RC5 STM32F1test.list
+ 
+18:32:32 **** Incremental Build of configuration Debug for project TSOP2236 RC5 STM32F1test ****
+make -j8 all 
+arm-none-eabi-size   TSOP2236\ RC5\ STM32F1test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11496	    120	   1768	  13384	   3448	TSOP2236 RC5 STM32F1test.elf
+Finished building: default.size.stdout
+ 
