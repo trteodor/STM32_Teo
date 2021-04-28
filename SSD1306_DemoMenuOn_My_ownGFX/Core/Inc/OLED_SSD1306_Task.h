@@ -32,9 +32,11 @@
 #include"mpu6050.h"
 #include "rc522.h"
 
+#include "arm_math.h"
+
 extern void OLED_Init();
 extern void OLED_Task();
 extern void OLED_EXTI_CallBack(uint16_t GPIO_Pin);
-
+extern void ADC_MicrophoneConvCpltCallBack();
 
 #endif /* INC_OLED_SSD1306_TASK_H_ */

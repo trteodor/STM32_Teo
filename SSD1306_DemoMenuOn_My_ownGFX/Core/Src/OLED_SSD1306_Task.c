@@ -33,6 +33,9 @@ void DrawReflective();;
 void DrawFotoResistor();
 void mMFRC522ReadBlock();
 void DrawMFRC522();
+void ADC_MicrophoneConvCpltCallBack();
+void DrawFFT_Micro();
+void CalculateFFT();
 
 int ButtonFlag=0;
 uint32_t ButtonDelay=0;
@@ -68,28 +71,63 @@ uint16_t TSOP_NormRecData;
 MPU6050_t MPU6050;
 
 //ADC
+#define FFT_SAMPLES 0
 struct ADC1Dat
 {
-	uint32_t CzOdb;
-	uint32_t FotoRez;
+uint32_t Microphone;
+uint32_t FotoRez;
+uint32_t CzujnikOdb;
 }ADC1Dat;
+
+
+typedef struct
+{
+	uint8_t OutFreqArray[10];
+} FftData_t;
+
+float complexABS(float real, float compl) {
+	return sqrtf(real*real+compl*compl);
+}
+
+FftData_t FftData;
+uint16_t AdcMicrophone[FFT_SAMPLES];
+float FFTInBuffer[FFT_SAMPLES];
+float FFTOutBuffer[FFT_SAMPLES];
+arm_rfft_fast_instance_f32 FFTHandler;
+
+
+arm_rfft_fast_instance_f32 FFTHandler;
+FftData_t FftData;
+int Freqs[FFT_SAMPLES];
+int FreqPoint = 0;
+int Offset = 45; // variable noise floor offset
+
+
+
+
+
+
+
+
 //MFRC522
 uint8_t str[MAX_LEN];
 uint8_t UID[5];
 uint8_t  FACTORY_KEY[] = {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};
 uint8_t W[]="POZDRAWIAM";
 uint8_t R[16];
-
+uint8_t MicrophoneDataReady=0;
 
 
 void OLED_Init()
 {
+					HAL_TIM_Base_Start(&htim3);
+					  HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&ADC1Dat, 3); //ADC for FotoRez and reflective sensor
 
 					MainWindow= GFX_CreateScreen();  //Create Main Bufor Frame Pointer
 
 					HAL_TIM_Base_Start_IT(&htim2);
 					RC5_INIT(&TSOP4836);
-					  HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&ADC1Dat, 2); //ADC for FotoRez and reflective sensor
+
 					  MFRC522_Init();
 
 					HCSR04_Init(&htim1);
@@ -115,7 +153,7 @@ void OLED_Task()
 
 void OLED_ActiveTask()
 {
-	if( (OL_Time+60) < HAL_GetTick())  //minimum delay time is around 80ms because better wait on end data transfer on i2c line OLED data with DMA
+	if( (OL_Time+30) < HAL_GetTick())  //minimum delay time is around 80ms because better wait on end data transfer on i2c line OLED data with DMA
 			{
 				OL_Time=HAL_GetTick();
 
@@ -159,6 +197,10 @@ void OLED_ActiveTask()
 									mMFRC522ReadBlock();
 									DrawMFRC522();
 								break;
+								case 180:			//Micro
+									//CalculateFFT();
+									DrawFFT_Micro();
+								break;
 								}
 						}
 
@@ -197,9 +239,14 @@ void OLED_PickButton_Task()
 			ButtonFlag=0;
 			DrawLedMenu(MainWindow,ProgramState);
 		break;
-
+					ProgramState=101;
+					ButtonFlag=0;
+					DrawLedMenu(MainWindow,ProgramState);
 
 		case 3:
+			ProgramState=180;
+					ButtonFlag=0;
+
 		break;
 		case 4: 						//HCSR04 - active task
 				ProgramState=110;
@@ -276,6 +323,11 @@ void OLED_PickButton_Task()
 			DrawMainMenu(MainWindow,ProgramState);
 			break;
 		case 170:
+			ProgramState=1;
+			ButtonFlag=0;
+			DrawMainMenu(MainWindow,ProgramState);
+			break;
+		case 180:   //Microphone
 			ProgramState=1;
 			ButtonFlag=0;
 			DrawMainMenu(MainWindow,ProgramState);
@@ -469,6 +521,8 @@ void DrawGFXDemo()
 	  		GFX_PutWindow(WindowVerStr, MainWindow, 110,5);
 
 
+
+
 	  			GFX_DrawString(WindowVerScrH,0,0, "POZDRAWIAM ALLS", WHITE, BLACK);
 	  			GFX_DrawString(WindowVerScrH,0,8, "To Dziala!", WHITE, BLACK);
 		  		if(scrollprocessVer<16)
@@ -476,9 +530,10 @@ void DrawGFXDemo()
 		  			GFX_Window_VerScrollFlow(WindowVerScrH, WindowVerScr , 120, 16, 1, 16,scrollprocessVer,1);
 		  			scrollprocessVer++;
 		  		}
-
 		  		if(scrollprocessVer>15) scrollprocessVer=0;
 		  		GFX_PutWindow(WindowVerScr, MainWindow, 5, 36);
+
+
 
 
 				GFX_DrawString(WindowHorScrH,0,0, "Teodor Test", WHITE, BLACK);
@@ -570,7 +625,7 @@ void DrawReflective()
 		GFX_SetFontSize(1);
 
 		GFX_DrawString(MainWindow, 5, 16, "Wartosc ADC:", WHITE, BLACK);
-		sprintf(strhbuf,"%lu ", ADC1Dat.CzOdb);
+		sprintf(strhbuf,"%lu ", ADC1Dat.CzujnikOdb);
 		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
 
 		SSD1306_Display(MainWindow);
@@ -613,6 +668,74 @@ void mMFRC522ReadBlock()
 	}
 }
 
+
+void CalculateFFT()
+{
+	if(MicrophoneDataReady)
+	{
+		arm_rfft_fast_init_f32(&FFTHandler, FFT_SAMPLES);
+
+
+		MicrophoneDataReady=0;
+
+		 for(uint32_t i = 0; i < FFT_SAMPLES; i++)
+			  {
+				  FFTInBuffer[i] =  (float)AdcMicrophone[i];
+			  }
+
+			  arm_rfft_fast_f32(&FFTHandler, FFTInBuffer, FFTOutBuffer, 0);
+
+				FreqPoint = 0;
+				// calculate abs values and linear-to-dB
+				for (int i = 0; i < FFT_SAMPLES; i = i+2)
+				{
+					Freqs[FreqPoint] = (int)(20*log10f(complexABS(FFTOutBuffer[i], FFTOutBuffer[i+1]))) - Offset;
+
+					if(Freqs[FreqPoint] < 0)
+					{
+						Freqs[FreqPoint] = 0;
+					}
+					FreqPoint++;
+				}
+
+				FftData.OutFreqArray[0] = (uint8_t)Freqs[1]; // 22 Hz
+				FftData.OutFreqArray[1] = (uint8_t)Freqs[2]; // 63 Hz
+				FftData.OutFreqArray[2] = (uint8_t)Freqs[3]; // 125 Hz
+				FftData.OutFreqArray[3] = (uint8_t)Freqs[6]; // 250 Hz
+				FftData.OutFreqArray[4] = (uint8_t)Freqs[12]; // 500 Hz
+				FftData.OutFreqArray[5] = (uint8_t)Freqs[23]; // 1000 Hz
+				FftData.OutFreqArray[6] = (uint8_t)Freqs[51]; // 2200 Hz
+				FftData.OutFreqArray[7] = (uint8_t)Freqs[104]; // 4500 Hz
+				FftData.OutFreqArray[8] = (uint8_t)Freqs[207]; // 9000 Hz
+				FftData.OutFreqArray[9] = (uint8_t)Freqs[344]; // 15000 Hz
+	}
+}
+
+
+void DrawFFT_Micro()
+{
+	char head[20]="MicroPhone";
+	char strhbuf[40];
+
+		GFX_ClearBuffer(MainWindow,LCDWIDTH, LCDHEIGHT);
+		DrawHead(MainWindow, 1,1,head );
+		GFX_SetFontSize(1);
+
+		GFX_DrawString(MainWindow, 5, 16, "Wartosc ADC:", WHITE, BLACK);
+		sprintf(strhbuf,"%lu ", ADC1Dat.Microphone);
+		GFX_DrawString(MainWindow, 5, 28, strhbuf, WHITE, BLACK);
+	/*for(uint8_t i = 0; i < 10; i++) // Each frequency
+	{
+	  GFX_DrawFillRectangle(MainWindow,10+(i*11), 64-FftData.OutFreqArray[i], 10, FftData.OutFreqArray[i], WHITE);
+	}*/
+	SSD1306_Display(MainWindow);
+}
+
+
+void ADC_MicrophoneConvCpltCallBack()
+{
+	MicrophoneDataReady=1;
+}
 
 void DrawFotoResistor()
 {

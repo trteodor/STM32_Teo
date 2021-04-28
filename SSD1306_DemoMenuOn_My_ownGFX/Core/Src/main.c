@@ -82,6 +82,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 
 }
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
+{
+	if(hadc->Instance == ADC1)
+	{
+		ADC_MicrophoneConvCpltCallBack();
+	}
+}
+
+
+
 
 /* USER CODE END 0 */
 
@@ -120,6 +130,7 @@ int main(void)
   MX_TIM2_Init();
   MX_ADC1_Init();
   MX_SPI1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   OLED_Init();
   MFRC522_Init();
